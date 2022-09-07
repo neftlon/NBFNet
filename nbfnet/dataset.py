@@ -387,6 +387,8 @@ class biomedical(data.KnowledgeGraphDataset):
             split = torch_data.Subset(self, range(offset, offset + num_sample))
             splits.append(split)
             offset += num_sample
+
+        self.splits = splits
             
         if self.include_factgraph:
             return splits[1:]
@@ -395,7 +397,7 @@ class biomedical(data.KnowledgeGraphDataset):
         
     def get_fact1(self):
         if self.include_factgraph:
-            return splits[0]
+            return self.splits[0]
         else:
             return None
     
