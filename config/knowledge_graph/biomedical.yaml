@@ -6,7 +6,7 @@ dataset:
   include_factgraph: True
   
 task:
-  class: KnowledgeGraphCompletion
+  class: KnowledgeGraphCompletionBio
   model:
     class: NBFNet
     input_dim: 32
@@ -16,6 +16,7 @@ task:
     short_cut: yes
     layer_norm: yes
     dependent: no
+  heterogeneous_negative: yes
   criterion: bce
   num_negative: 32
   strict_negative: yes

@@ -368,6 +368,8 @@ class biomedical(data.KnowledgeGraphDataset):
         "valid.txt", # such as KEGG valid
         "test.txt",] # such as KEGG test
 
+    entity_vocab_file = "entity_types.txt"
+
     def __init__(self, path, include_factgraph=True, verbose=1):
         self.path = path
         self.include_factgraph = include_factgraph
@@ -379,9 +381,59 @@ class biomedical(data.KnowledgeGraphDataset):
             txt_files.append(os.path.join(self.path, x))
 
         self.load_tsvs(txt_files, verbose=verbose)
+        self.load_entity_types(path)
 
-    def split(self):
+    def load_entity_types(self, path) -> None:
+
+        entity_type_vocab = []
+        entity_type2num = []
+
+        with open(os.path.join(path, self.entity_vocab_file), 'r') as f:
+            cur_entity_type = None
+            type_count = 0
+            entity_count = 0
+            lines = f.readlines()
+            for line in lines:
+                split = line.split('\t')
+                gene = split[0]
+                entity_type = split[1][:-1]
+                if entity_type != cur_entity_type:
+                    entity_type_vocab.append(entity_type)
+                    if cur_entity_type is not None:
+                        entity_type2num.append(type_count+1)
+                    cur_entity_type = entity_type 
+                    type_count = 0
+                else:
+                    type_count += 1
+                # import pdb; pdb.set_trace()
+                # assert gene == self.entity_vocab[entity_count]
+                entity_count += 1
+
+        entity_type2num.append(type_count+1)
+        assert len(entity_type_vocab) == len(set(entity_type_vocab))
+
+        inv_entity_type_vocab = {}
+        inv_entity_type_offset = {}
+        entity_type_offset = 0
+        for ith, entity_type in enumerate(entity_type_vocab):
+            inv_entity_type_vocab[entity_type] = ith
+            inv_entity_type_offset[entity_type] = entity_type_offset
+            entity_type_offset += entity_type2num[ith]
+
+        self.inv_entity_type_offset = inv_entity_type_offset
+        self.entity_type_vocab = entity_type_vocab
+        self.inv_entity_type_vocab = inv_entity_type_vocab
+
+        node_type = []
+        for i, num_entity in enumerate(entity_type2num):
+            node_type += [i] * num_entity
+        with self.graph.node():
+            self.graph.node_type = torch.tensor(node_type)
+        return 
+
+    def split(self, test_negative=True):
         offset = 0
+        neg_offset = 0
         splits = []
         for num_sample in self.num_samples:
             split = torch_data.Subset(self, range(offset, offset + num_sample))
@@ -396,7 +448,7 @@ class biomedical(data.KnowledgeGraphDataset):
             return splits
         
     def get_fact1(self):
-        if self.include_factgraph:
+        if self.include_factgraph and self.splits is None:
             return self.splits[0]
         else:
             return None
