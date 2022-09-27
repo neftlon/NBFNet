@@ -2,6 +2,8 @@ import os
 import time
 import logging
 import argparse
+import sys
+import pprint
 
 import yaml
 import jinja2
@@ -120,3 +122,21 @@ def build_solver(cfg, dataset):
         solver.load(cfg.checkpoint)
 
     return solver
+
+
+class DebugHook:
+    instance = None
+
+    def __call__(self, *args, **kwargs):
+        if comm.get_rank() > 0:
+            while True:
+                pass
+
+        if self.instance is None:
+            from IPython.core import ultratb
+            self.instance = ultratb.FormattedTB(mode="Plain", color_scheme="Linux", call_pdb=1)
+        return self.instance(*args, **kwargs)
+
+
+def setup_debug_hook():
+    sys.excepthook = DebugHook()
