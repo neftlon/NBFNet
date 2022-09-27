@@ -517,7 +517,6 @@ class KnowledgeGraphCompletionBio(tasks.KnowledgeGraphCompletion, core.Configura
         t_truth_index = self.fact_graph.edge_list[edge_index, 1]
         pos_index = functional._size_to_index(num_t_truth)
         if self.heterogeneous_negative:
-            import pdb; pdb.set_trace()
             pos_t_type = node_type[pos_t_index[:batch_size // 2]]
             t_mask = pos_t_type.unsqueeze(-1) == node_type.unsqueeze(0)
         else:
@@ -545,6 +544,46 @@ class KnowledgeGraphCompletionBio(tasks.KnowledgeGraphCompletion, core.Configura
         neg_index = torch.cat([neg_t_index, neg_h_index])
 
         return neg_index
+
+    def predict(self, batch, all_loss=None, metric=None):
+        pos_h_index, pos_t_index, pos_r_index = batch.t()
+        batch_size = len(batch)
+
+        if all_loss is None:
+            # test
+            all_index = torch.arange(self.num_entity, device=self.device)
+            t_preds = []
+            h_preds = []
+            # rather than use all_index use node_type
+            for neg_index in all_index.split(self.num_negative):
+                r_index = pos_r_index.unsqueeze(-1).expand(-1, len(neg_index))
+                h_index, t_index = torch.meshgrid(pos_h_index, neg_index)
+                t_pred = self.model(self.fact_graph, h_index, t_index, r_index, all_loss=all_loss, metric=metric)
+                t_preds.append(t_pred)
+            t_pred = torch.cat(t_preds, dim=-1)
+            for neg_index in all_index.split(self.num_negative):
+                r_index = pos_r_index.unsqueeze(-1).expand(-1, len(neg_index))
+                t_index, h_index = torch.meshgrid(pos_t_index, neg_index)
+                h_pred = self.model(self.fact_graph, h_index, t_index, r_index, all_loss=all_loss, metric=metric)
+                h_preds.append(h_pred)
+            h_pred = torch.cat(h_preds, dim=-1)
+            pred = torch.stack([t_pred, h_pred], dim=1)
+            # in case of GPU OOM
+            pred = pred.cpu()
+        else:
+            # train
+            if self.strict_negative:
+                neg_index = self._strict_negative(pos_h_index, pos_t_index, pos_r_index)
+            else:
+                neg_index = torch.randint(self.num_entity, (batch_size, self.num_negative), device=self.device)
+            h_index = pos_h_index.unsqueeze(-1).repeat(1, self.num_negative + 1)
+            t_index = pos_t_index.unsqueeze(-1).repeat(1, self.num_negative + 1)
+            r_index = pos_r_index.unsqueeze(-1).repeat(1, self.num_negative + 1)
+            t_index[:batch_size // 2, 1:] = neg_index[:batch_size // 2]
+            h_index[batch_size // 2:, 1:] = neg_index[batch_size // 2:]
+            pred = self.model(self.fact_graph, h_index, t_index, r_index, all_loss=all_loss, metric=metric)
+
+        return pred
 
     def evaluate(self, pred, target):
         mask, target = target
