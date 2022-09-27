@@ -615,3 +615,4 @@ class KnowledgeGraphCompletionBio(tasks.KnowledgeGraphCompletion, core.Configura
             metric[name] = score
 
         return metric
+    
