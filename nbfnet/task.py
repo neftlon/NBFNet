@@ -65,7 +65,9 @@ class KnowledgeGraphCompletionExt(tasks.KnowledgeGraphCompletion, core.Configura
             ranking = torch.sum((pos_pred <= pred) & mask, dim=-1) + 1
         else:
             ranking = torch.sum(pos_pred <= pred, dim=-1) + 1
-
+            
+        pred = pred.flatten()
+        target = target.flatten()
         metric = {}
         for _metric in self.metric:
             if _metric == "mr":
@@ -544,5 +546,33 @@ class KnowledgeGraphCompletionBio(tasks.KnowledgeGraphCompletion, core.Configura
 
         return neg_index
 
-    def predict(self):
-        pass
+    def evaluate(self, pred, target):
+        mask, target = target
+
+        pos_pred = pred.gather(-1, target.unsqueeze(-1))
+        if self.filtered_ranking:
+            ranking = torch.sum((pos_pred <= pred) & mask, dim=-1) + 1
+        else:
+            ranking = torch.sum(pos_pred <= pred, dim=-1) + 1
+        
+        pred = pred.flatten()
+        target = target.flatten()
+        metric = {}
+        for _metric in self.metric:
+            if _metric == "mr":
+                score = ranking.float().mean()
+            elif _metric == "mrr":
+                score = (1 / ranking.float()).mean()
+            elif _metric.startswith("hits@"):
+                threshold = int(_metric[5:])
+                score = (ranking <= threshold).float().mean()
+            elif _metric == "auroc":
+                score = metrics.area_under_roc(pred, target)
+            elif _metric == "ap":
+                score = metrics.area_under_prc(pred, target)
+            else:
+                raise ValueError("Unknown metric `%s`" % _metric)
+            name = tasks._get_metric_name(_metric)
+            metric[name] = score
+
+        return metric
