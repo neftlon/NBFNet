@@ -384,6 +384,23 @@ class biomedical(data.KnowledgeGraphDataset):
         self.load_entity_types(path)
 
     def load_entity_types(self, path) -> None:
+        entity_type = {}
+        with open(os.path.join(path, self.entity_vocab_file), 'r') as f:
+            lines = f.readlines()
+            for line in lines:
+                line = line[:-1]
+                split = line.split('\t')
+                entity_type[split[0]] = int(split[1])
+
+        node_type = torch.zeros((len(self.inv_entity_vocab),),dtype=torch.long)
+
+        for k,v in entity_type.items():
+            node_type[self.inv_entity_vocab[k]] = v
+
+        with self.graph.node():
+            self.graph.node_type = node_type
+
+    def load_entity_types_legacy(self, path) -> None:
 
         entity_type_vocab = []
         entity_type2num = []

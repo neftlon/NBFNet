@@ -515,6 +515,7 @@ class KnowledgeGraphCompletionBio(tasks.KnowledgeGraphCompletion, core.Configura
         t_truth_index = self.fact_graph.edge_list[edge_index, 1]
         pos_index = functional._size_to_index(num_t_truth)
         if self.heterogeneous_negative:
+            import pdb; pdb.set_trace()
             pos_t_type = node_type[pos_t_index[:batch_size // 2]]
             t_mask = pos_t_type.unsqueeze(-1) == node_type.unsqueeze(0)
         else:
@@ -542,3 +543,6 @@ class KnowledgeGraphCompletionBio(tasks.KnowledgeGraphCompletion, core.Configura
         neg_index = torch.cat([neg_t_index, neg_h_index])
 
         return neg_index
+
+    def predict(self):
+        pass
