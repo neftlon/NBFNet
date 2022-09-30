@@ -559,40 +559,31 @@ class KnowledgeGraphCompletionBio(tasks.KnowledgeGraphCompletion, core.Configura
             h_preds = []
                 # rather than use all_index use node_type
             for neg_index in all_index.split(self.num_negative):
-                for i in range(num_entities):
-                    if (node_type[neg_index]==i).sum()> 0:
-                        # am I masking the right thing?
-                        neg_index_type = neg_index[node_type[neg_index]==i]
-                        x,y = torch.meshgrid(neg_index_type, neg_index_type)
-                        pos_r = pos_r_index[neg_index_type]
-                        pos_h = pos_h_index[neg_index_type]
-                        r_index = pos_r.unsqueeze(-1).expand(-1, len(neg_index_type))
-                        h_index, t_index = torch.meshgrid(pos_h, neg_index_type)
-                        t_pred_type = self.model(self.fact_graph, h_index, t_index, r_index, all_loss=all_loss, metric=metric)
-                        # what should t_pred value be for masked nodes?
-                        t_pred = torch.full((self.num_negative,self.num_negative), 
-                                            device=self.device,
-                                            fill_value=torch.finfo(t_pred_type.dtype).min)
-                        t_pred[x,y] = t_pred_type
-                        t_preds.append(t_pred)
-                t_pred = torch.cat(t_preds, dim=-1)
+                pos_t_type = node_type[pos_t_index]
+                neg_index_type = node_type[neg_index]
+                mask = pos_t_type.unsqueeze(-1) == neg_index_type.unsqueeze(0)
+                pos_r = pos_r_index
+                pos_h = pos_h_index
+                r_index = pos_r.unsqueeze(-1).expand(-1, len(neg_index))
+                h_index, t_index = torch.meshgrid(pos_h, neg_index)
+                t_pred = self.model(self.fact_graph, h_index, t_index, r_index, all_loss=all_loss, metric=metric)
+                # what should t_pred value be for masked nodes?
+                t_pred = mask.float() * t_pred + (1-mask.float()) * torch.finfo(t_pred.dtype).min
+                t_preds.append(t_pred)
+            t_pred = torch.cat(t_preds, dim=-1)
             for neg_index in all_index.split(self.num_negative):
-                for i in range(num_entities):
-                    if (node_type[neg_index]==i).sum()> 0:
-                        neg_index_type = neg_index[node_type[neg_index]==i]
-                        x,y = torch.meshgrid(neg_index_type, neg_index_type)
-                        pos_r = pos_r_index[neg_index_type]
-                        pos_t = pos_t_index[neg_index_type]
-                        r_index = pos_r.unsqueeze(-1).expand(-1, len(neg_index_type))
-                        t_index, h_index = torch.meshgrid(pos_t, neg_index_type)
-                        h_pred_type = self.model(self.fact_graph, h_index, t_index, r_index, all_loss=all_loss, metric=metric)
-                        h_pred = torch.full((self.num_negative,self.num_negative), 
-                                            device=self.device,
-                                            fill_value=torch.finfo(h_pred_type.dtype).min)
-                        h_pred[x,y] = h_pred_type
-                        h_preds.append(h_pred)
-                h_pred = torch.cat(h_preds, dim=-1)
-                pred = torch.stack([t_pred, h_pred], dim=1)
+                pos_h_type = node_type[pos_h_index]
+                neg_index_type = node_type[neg_index]
+                mask = pos_h_type.unsqueeze(-1) == neg_index_type.unsqueeze(0)
+                pos_r = pos_r_index
+                pos_t = pos_t_index
+                r_index = pos_r.unsqueeze(-1).expand(-1, len(neg_index))
+                t_index, h_index = torch.meshgrid(pos_t, neg_index)
+                h_pred = self.model(self.fact_graph, h_index, t_index, r_index, all_loss=all_loss, metric=metric)
+                h_pred = mask.float() * h_pred + (1-mask.float()) * torch.finfo(h_pred.dtype).min
+                h_preds.append(h_pred)
+            h_pred = torch.cat(h_preds, dim=-1)
+            pred = torch.stack([t_pred, h_pred], dim=1)
             # in case of GPU OOM
             pred = pred.cpu()
         else:
