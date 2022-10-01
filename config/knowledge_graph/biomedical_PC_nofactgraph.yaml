@@ -3,7 +3,7 @@ output_dir: ~/experiments/
 dataset:
   class: biomedical
   path: /home/mila/y/yue.hu/github/NBFNet/data/PC_KEGG
-  include_factgraph: True
+  include_factgraph: False
   
 task:
   class: KnowledgeGraphCompletion
@@ -34,7 +34,7 @@ engine:
   
 
 train:
-  num_epoch: 1
-  batch_per_epoch: 1000
+  num_epoch: 8
+#  batch_per_epoch: 1000
 
 metric: mrr

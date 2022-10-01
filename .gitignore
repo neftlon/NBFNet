@@ -10,3 +10,14 @@ __pycache__
 
 # macOS
 .DS_Store
+
+
+.ipynb
+
+sbatch
+
+.ipynb_checkpoints
+
+
+data/PC_KEGG
+data/old_PC_KEGG/

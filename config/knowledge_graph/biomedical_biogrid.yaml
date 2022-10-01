@@ -15,7 +15,7 @@ task:
     aggregate_func: pna
     short_cut: yes
     layer_norm: yes
-    dependent: yes
+    dependent: no
   criterion: bce
   num_negative: 32
   strict_negative: yes
@@ -34,7 +34,7 @@ engine:
   
 
 train:
-  num_epoch: 1
+  num_epoch: 2
   batch_per_epoch: 1000
 
 metric: mrr

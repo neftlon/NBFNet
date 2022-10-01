@@ -6,7 +6,7 @@ dataset:
   include_factgraph: True
   
 task:
-  class: KnowledgeGraphCompletion
+  class: KnowledgeGraphCompletionBio
   model:
     class: NBFNet
     input_dim: 32
@@ -21,6 +21,8 @@ task:
   strict_negative: yes
   adversarial_temperature: 1
   sample_weight: no
+  heterogeneous_negative: yes
+  heterogeneous_evaluation: yes
 
 
 
@@ -34,7 +36,7 @@ engine:
   
 
 train:
-  num_epoch: 1
-  batch_per_epoch: 1000
+  num_epoch: 8
+#  batch_per_epoch: 1000
 
 metric: mrr
