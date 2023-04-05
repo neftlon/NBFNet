@@ -2,7 +2,7 @@ output_dir: ~/experiments/
 
 dataset:
   class: biomedical
-  path: /home/mila/y/yue.hu/github/NBFNet/data/biomedical
+  path: /home/mila/y/yue.hu/github/NBFNet/data/PC_KEGG
   include_factgraph: True
   
 task:
@@ -38,3 +38,5 @@ train:
   batch_per_epoch: 1000
 
 metric: mrr
+
+checkpoint: {{ checkpoint }}

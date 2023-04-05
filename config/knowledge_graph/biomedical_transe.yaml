@@ -1,0 +1,33 @@
+output_dir: ~/scratch/experiments/
+
+dataset:
+  class: biomedical
+  path: /home/mila/x/xhonneul/projects/NBFNet/data/biomedical_PC
+  include_factgraph: no
+  
+task:
+  class: KnowledgeGraphCompletionBio
+  model:
+    class: TransE
+    embedding_dim: 512
+    max_score: 6
+  criterion: bce
+  num_negative: 512
+  strict_negative: yes
+  heterogeneous_negative: yes
+  heterogeneous_evaluation: yes
+  adversarial_temperature: 1
+  sample_weight: yes
+
+optimizer:
+  class: Adam
+  lr: 5.0e-4
+
+engine:
+  gpus: {{ gpus }}
+  batch_size: 1024
+
+train:
+  num_epoch: 500
+
+metric: mrr

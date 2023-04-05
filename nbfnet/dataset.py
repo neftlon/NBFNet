@@ -368,9 +368,13 @@ class biomedical(data.KnowledgeGraphDataset):
         "valid.txt", # such as KEGG valid
         "test.txt",] # such as KEGG test
 
-    def __init__(self, path, include_factgraph=True, verbose=1):
+    entity_vocab_file = "entity_types.txt"
+
+    def __init__(self, path, include_factgraph=True, fact_as_train=False, verbose=1):
+        path = os.path.expanduser(path)
         self.path = path
         self.include_factgraph = include_factgraph
+        self.fact_as_train = fact_as_train
         
         chosen_files = self.files if self.include_factgraph else self.files[1:]
 
@@ -379,16 +383,49 @@ class biomedical(data.KnowledgeGraphDataset):
             txt_files.append(os.path.join(self.path, x))
 
         self.load_tsvs(txt_files, verbose=verbose)
+        self.load_entity_types(path)
+
+    def load_entity_types(self, path) -> None:
+        entity_type = {}
+        with open(os.path.join(path, self.entity_vocab_file), 'r') as f:
+            lines = f.readlines()
+            for line in lines:
+                line = line[:-1]
+                split = line.split('\t')
+                entity_type[split[0]] = int(split[1])
+        # inv_type_vocab = {}
+        # node_type = {}
+        # with open(os.path.join(path, self.entity_vocab_file), "r") as f:
+        #     lines = f.readlines()
+        #     for line in lines:
+        #         entity_token, type_token = line.strip().split()
+        #         if type_token not in inv_type_vocab:
+        #             inv_type_vocab[type_token] = len(inv_type_vocab)
+        #         node_type[self.inv_entity_vocab[entity_token]] = inv_type_vocab[type_token]
+        
+        # assert len(node_type) == self.num_entity
+        # _, node_type = zip(*sorted(node_type.items()))
+        node_type = torch.zeros((len(self.inv_entity_vocab),),dtype=torch.long)
+
+        for k,v in entity_type.items():
+            node_type[self.inv_entity_vocab[k]] = v
+
+        with self.graph.node():
+            self.graph.node_type = node_type
+
 
     def split(self):
         offset = 0
         splits = []
-        for num_sample in self.num_samples:
+        num_samples = self.num_samples
+        if self.include_factgraph and self.fact_as_train:
+            num_samples = [num_samples[0] + num_samples[1]] + num_samples[2:]
+        for num_sample in num_samples:
             split = torch_data.Subset(self, range(offset, offset + num_sample))
             splits.append(split)
             offset += num_sample
             
-        if self.include_factgraph:
+        if self.include_factgraph and not self.fact_as_train:
             return splits[1:]
         else:
             return splits
