@@ -493,14 +493,13 @@ class KnowledgeGraphCompletionBiomed(tasks.KnowledgeGraphCompletion, core.Config
                  metric=("mr", "mrr", "hits@1", "hits@3", "hits@10"),
                  num_negative=128, margin=6, adversarial_temperature=0, strict_negative=True,
                  heterogeneous_negative=False, heterogeneous_evaluation=False, filtered_ranking=True,
-                 fact_ratio=None, sample_weight=True, gene_annotation_predict=False, conditional_probability=False,
-                 full_batch_eval=False):
+                 fact_ratio=None, sample_weight=True, gene_annotation_predict=False, conditional_probability=False):
         super(KnowledgeGraphCompletionBiomed, self).__init__(model=model, criterion=criterion, metric=metric, 
                                                              num_negative=num_negative, margin=margin,
                                                              adversarial_temperature=adversarial_temperature, 
                                                              strict_negative=strict_negative,
                                                              filtered_ranking=filtered_ranking,fact_ratio=fact_ratio,
-                                                             sample_weight=sample_weight, full_batch_eval=full_batch_eval)
+                                                             sample_weight=sample_weight)
         self.heterogeneous_negative = heterogeneous_negative
         self.heterogeneous_evaluation = heterogeneous_evaluation
         self.gene_annotation_predict = gene_annotation_predict
@@ -547,6 +546,13 @@ class KnowledgeGraphCompletionBiomed(tasks.KnowledgeGraphCompletion, core.Config
         # TODO: check: where are the reverse edges added?
         node_type_t = node_type[graph.edge_list[:, 1]]
         
+        import pdb; pdb.set_trace()
+        from torch_scatter import scatter_add
+        myindex = graph.edge_list[:, 0]
+        myinput = torch.stack([(node_type_t == 0).long(), (node_type_t == 1).long()]) # change this line to do it automatically
+        out = myinput.new_zeros((len(node_type.unique()),  dataset.num_entity))
+        out = scatter_add(myinput, myindex, out=out)
+
         # count the number of occurance for each node to type t
         all_node_types = torch.unique(node_type)
         degree_in_type = []
