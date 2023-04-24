@@ -3,6 +3,7 @@ import math
 import torch
 from torch.nn import functional as F
 from torch.utils import data as torch_data
+from torch_scatter import scatter_add
 
 from ogb import linkproppred
 
@@ -546,26 +547,14 @@ class KnowledgeGraphCompletionBiomed(tasks.KnowledgeGraphCompletion, core.Config
         # TODO: check: where are the reverse edges added?
         node_type_t = node_type[graph.edge_list[:, 1]]
         
-        import pdb; pdb.set_trace()
-        from torch_scatter import scatter_add
+        # count the number of occurance for each node to type t
         myindex = graph.edge_list[:, 0]
-        myinput = torch.stack([(node_type_t == 0).long(), (node_type_t == 1).long()]) # change this line to do it automatically
+        myinput = torch.t(F.one_hot(node_type_t))  # one hot encoding of node types
         out = myinput.new_zeros((len(node_type.unique()),  dataset.num_entity))
         out = scatter_add(myinput, myindex, out=out)
-
-        # count the number of occurance for each node to type t
-        all_node_types = torch.unique(node_type)
-        degree_in_type = []
-        for i in all_node_types:
-            # get the h nodes that connect to type of t
-            node_in = graph.edge_list[:, 0][node_type_t == i]
-            # count how many edges per h node
-            x_degree_in = torch.bincount(node_in, minlength=self.graph.num_node)
-            # append
-            degree_in_type.append(x_degree_in)
         
         with self.fact_graph.graph():
-            self.fact_graph.degree_in_type = torch.stack(degree_in_type, dim=0)
+            self.fact_graph.degree_in_type = out
             self.fact_graph.num_nodes_per_type = torch.bincount(node_type)
 
         return train_set, valid_set, test_set     
