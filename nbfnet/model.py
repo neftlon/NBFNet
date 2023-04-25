@@ -148,10 +148,13 @@ class NeuralBellmanFordNetwork(nn.Module, core.Configurable):
 
         shape = h_index.shape
         if graph.num_relation:
-            graph = graph.undirected(add_inverse=True)
             if conditional_probability:
+                # undirected and negative sampling to tail
+                graph = graph.undirected(add_inverse=True)
                 h_index, t_index, r_index = self.negative_sample_to_tail(h_index, t_index, r_index)
                 assert (h_index[:, [0]] == h_index).all()
+            # if joint probability, then no need for negative sample to tail
+            # undirected already done in task.py in predict
         else:
             # convert to knowledge graph with 1 relation
             # will executed for LinkPrediction class, as num_relation is nonexistent
