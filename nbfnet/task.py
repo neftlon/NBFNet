@@ -673,6 +673,9 @@ class KnowledgeGraphCompletionBiomed(tasks.KnowledgeGraphCompletion, core.Config
 
                 
             else:
+                # add graph to undirected to calculate degree_in_type
+                
+                # calculate degree_in_type to use in strict_negative
                 if self.strict_negative:
                     neg_h_index, neg_t_index = self._strict_negative(pos_h_index, pos_t_index, pos_r_index)
                 else:
