@@ -767,7 +767,7 @@ class KnowledgeGraphCompletionBiomed(tasks.KnowledgeGraphCompletion, core.Config
             same_type_mask = pos_t_type == pos_h_type
             prob[same_type_mask] -= 1
             # set to 0, if not from desired node type
-            h_mask = node_type.unsqueeze(0) != pos_t_type.unsqueeze(1)
+            h_mask = node_type.unsqueeze(0) != pos_h_type.unsqueeze(1)
             prob[h_mask] = 0     
             
             # sample from the distribution
