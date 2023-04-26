@@ -144,16 +144,20 @@ class NeuralBellmanFordNetwork(nn.Module, core.Configurable):
     def forward(self, graph, h_index, t_index, r_index=None, all_loss=None, metric=None, conditional_probability=False):
         if all_loss is not None:
             # train
-            # remove both r and r-1 edges
-            graph = self.remove_easy_edges(graph, h_index, t_index, r_index)
+            import pdb; pdb.set_trace()
+            # remove both r and r-1 edges if conditional_probability=False
+            if conditional_probability:
+                graph = self.remove_easy_edges(graph, h_index, t_index, r_index)
+            else:
+                graph = self.remove_easy_edges(graph, h_index, t_index, r_index) # remove r
+                graph = self.remove_easy_edges(graph, t_index, h_index, (r_index + self.num_relation) % (self.num_relation * 2)) # remove r-1
 
         shape = h_index.shape
-        if graph.num_relation:
-            if conditional_probability:
-                # undirected and negative sampling to tail
-                graph = graph.undirected(add_inverse=True)
-                h_index, t_index, r_index = self.negative_sample_to_tail(h_index, t_index, r_index)
-                assert (h_index[:, [0]] == h_index).all()
+        if graph.num_relation and conditional_probability:
+            # undirected and negative sampling to tail
+            graph = graph.undirected(add_inverse=True)
+            h_index, t_index, r_index = self.negative_sample_to_tail(h_index, t_index, r_index)
+            assert (h_index[:, [0]] == h_index).all()
             # if joint probability, then no need for negative sample to tail
             # undirected already done in task.py in predict
         else:
