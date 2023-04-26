@@ -144,6 +144,7 @@ class NeuralBellmanFordNetwork(nn.Module, core.Configurable):
     def forward(self, graph, h_index, t_index, r_index=None, all_loss=None, metric=None, conditional_probability=False):
         if all_loss is not None:
             # train
+            # remove both r and r-1 edges
             graph = self.remove_easy_edges(graph, h_index, t_index, r_index)
 
         shape = h_index.shape

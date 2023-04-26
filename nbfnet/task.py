@@ -534,28 +534,6 @@ class KnowledgeGraphCompletionBiomed(tasks.KnowledgeGraphCompletion, core.Config
             self.register_buffer("degree_hr", degree_hr)
             self.register_buffer("degree_tr", degree_tr)
 
-        ########################
-        # add the degree_in_type
-        ########################
-
-        # get the graph, nodes, edge_list
-        graph = self.fact_graph
-        node_type = graph.node_type
-
-        
-        # get node type of tail
-        # TODO: check: where are the reverse edges added?
-        node_type_t = node_type[graph.edge_list[:, 1]]
-        
-        # count the number of occurance for each node to type t
-        myindex = graph.edge_list[:, 0]
-        myinput = torch.t(F.one_hot(node_type_t))  # one hot encoding of node types
-        out = myinput.new_zeros((len(node_type.unique()),  dataset.num_entity))
-        out = scatter_add(myinput, myindex, out=out)
-        
-        with self.fact_graph.graph():
-            self.fact_graph.degree_in_type = out
-            self.fact_graph.num_nodes_per_type = torch.bincount(node_type)
 
         return train_set, valid_set, test_set     
         
@@ -674,8 +652,35 @@ class KnowledgeGraphCompletionBiomed(tasks.KnowledgeGraphCompletion, core.Config
                 
             else:
                 # add graph to undirected to calculate degree_in_type
+                # parse the modified graph to forward
+                import pdb; pdb.set_trace()
+                graph = self.fact_graph
+                graph = graph.undirected(add_inverse=True)
                 
                 # calculate degree_in_type to use in strict_negative
+                
+                ########################
+                # add the degree_in_type
+                ########################
+
+                # get the graph, nodes, edge_list
+                node_type = graph.node_type
+                                
+                # get node type of tail
+                node_type_t = node_type[graph.edge_list[:, 1]]
+                
+                # count the number of occurance for each node to type t
+                myindex = graph.edge_list[:, 0]
+                myinput = torch.t(F.one_hot(node_type_t))  # one hot encoding of node types
+                out = myinput.new_zeros(len(node_type.unique()),  graph.num_node)
+                out = scatter_add(myinput, myindex, out=out)
+                
+                with self.fact_graph.graph():
+                    self.fact_graph.degree_in_type = out
+                    self.fact_graph.num_nodes_per_type = torch.bincount(node_type)
+                
+                ########################
+                ########################
                 if self.strict_negative:
                     neg_h_index, neg_t_index = self._strict_negative(pos_h_index, pos_t_index, pos_r_index)
                 else:
