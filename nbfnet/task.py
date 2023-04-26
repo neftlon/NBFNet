@@ -657,7 +657,6 @@ class KnowledgeGraphCompletionBiomed(tasks.KnowledgeGraphCompletion, core.Config
                 graph = graph.undirected(add_inverse=True)
                 
                 # calculate degree_in_type to use in strict_negative
-                
                 ########################
                 # add the degree_in_type
                 ########################
@@ -696,7 +695,7 @@ class KnowledgeGraphCompletionBiomed(tasks.KnowledgeGraphCompletion, core.Config
                 
 
             #import pdb; pdb.set_trace()
-            pred = self.model(self.fact_graph, h_index, t_index, r_index, all_loss=all_loss, metric=metric, conditional_probability = self.conditional_probability)
+            pred = self.model(graph, h_index, t_index, r_index, all_loss=all_loss, metric=metric, conditional_probability = self.conditional_probability)
             
         return pred
     
@@ -745,7 +744,6 @@ class KnowledgeGraphCompletionBiomed(tasks.KnowledgeGraphCompletion, core.Config
             return neg_index
         
         else:
-            import pdb; pdb.set_trace()
             # joint probaility - better for finding all missing links
             node_type = graph.node_type
             
