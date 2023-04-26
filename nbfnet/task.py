@@ -653,7 +653,6 @@ class KnowledgeGraphCompletionBiomed(tasks.KnowledgeGraphCompletion, core.Config
             else:
                 # add graph to undirected to calculate degree_in_type
                 # parse the modified graph to forward
-                import pdb; pdb.set_trace()
                 graph = self.fact_graph
                 graph = graph.undirected(add_inverse=True)
                 
@@ -672,17 +671,16 @@ class KnowledgeGraphCompletionBiomed(tasks.KnowledgeGraphCompletion, core.Config
                 # count the number of occurance for each node to type t
                 myindex = graph.edge_list[:, 0]
                 myinput = torch.t(F.one_hot(node_type_t))  # one hot encoding of node types
-                out = myinput.new_zeros(len(node_type.unique()),  graph.num_node)
-                out = scatter_add(myinput, myindex, out=out)
+                degree_in_type = myinput.new_zeros(len(node_type.unique()),  graph.num_node)
                 
-                with self.fact_graph.graph():
-                    self.fact_graph.degree_in_type = out
-                    self.fact_graph.num_nodes_per_type = torch.bincount(node_type)
+                degree_in_type = scatter_add(myinput, myindex, out=degree_in_type)
+                num_nodes_per_type = torch.bincount(node_type)
                 
                 ########################
                 ########################
                 if self.strict_negative:
-                    neg_h_index, neg_t_index = self._strict_negative(pos_h_index, pos_t_index, pos_r_index)
+                    neg_h_index, neg_t_index = self._strict_negative(pos_h_index, pos_t_index, pos_r_index, degree_in_type, num_nodes_per_type, graph)
+                    #TODO: does it make sense to register another graph for the undirected case?
                 else:
                     neg_h_index, neg_t_index = torch.randint(self.num_node, (2, batch_size * self.num_negative), device=self.device)
                 # make dim 0 batch size and dim 1 negative samples
@@ -705,10 +703,10 @@ class KnowledgeGraphCompletionBiomed(tasks.KnowledgeGraphCompletion, core.Config
 
     
     @torch.no_grad()
-    def _strict_negative(self, pos_h_index, pos_t_index, pos_r_index):
+    def _strict_negative(self, pos_h_index, pos_t_index, pos_r_index, degree_in_type, num_nodes_per_type, graph):
+        # TODO: set default for degree_in_type and num_nodes_per_type, in case of not using them
         if self.conditional_probability:
             # conditional probaility - classical KG setting
-
             batch_size = len(pos_h_index)
             any = -torch.ones_like(pos_h_index)
             node_type = self.fact_graph.node_type
@@ -747,13 +745,9 @@ class KnowledgeGraphCompletionBiomed(tasks.KnowledgeGraphCompletion, core.Config
             return neg_index
         
         else:
+            import pdb; pdb.set_trace()
             # joint probaility - better for finding all missing links
-            node_type = self.fact_graph.node_type
-            graph =  self.fact_graph
-            
-            # the number of nodes per type & degree_in_type
-            num_nodes_per_type = self.fact_graph.num_nodes_per_type
-            degree_in_type = self.fact_graph.degree_in_type
+            node_type = graph.node_type
             
             ####################### 
             # sample from p(h)
@@ -767,7 +761,8 @@ class KnowledgeGraphCompletionBiomed(tasks.KnowledgeGraphCompletion, core.Config
             # number of nodes of type(t) - degree of node h connecting to type t
             
             prob = (num_nodes_per_type[pos_t_type].unsqueeze(1) - degree_in_type[pos_t_type]).float()
-
+            #TODO: also yields negative values, bcs of the num_nodes_per_type - degree_in_type (from undirected graph)
+            
             # if type_h == type_t, remove one from prob
             same_type_mask = pos_t_type == pos_h_type
             prob[same_type_mask] -= 1
