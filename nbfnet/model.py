@@ -176,8 +176,10 @@ class NeuralBellmanFordNetwork(nn.Module, core.Configurable):
         index = t_index.unsqueeze(-1).expand(-1, -1, feature.shape[-1])
         feature = feature.gather(1, index)
 
-        if self.symmetric:
-            assert (t_index[:, [0]] == t_index).all()
+        if self.symmetric and not conditional_probability:
+            #assert (t_index[:, [0]] == t_index).all()
+            # flatten
+            r_index = (r_index + self.num_relation) % (self.num_relation * 2)
             output = self.bellmanford(graph, t_index[:, 0], r_index[:, 0])
             inv_feature = output["node_feature"].transpose(0, 1)
             index = h_index.unsqueeze(-1).expand(-1, -1, inv_feature.shape[-1])

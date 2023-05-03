@@ -3,7 +3,7 @@ import math
 import torch
 from torch.nn import functional as F
 from torch.utils import data as torch_data
-from torch_scatter import scatter_add
+import torch_scatter
 
 from ogb import linkproppred
 
@@ -672,7 +672,7 @@ class KnowledgeGraphCompletionBiomed(tasks.KnowledgeGraphCompletion, core.Config
                 myinput = torch.t(F.one_hot(node_type_t))  # one hot encoding of node types
                 degree_in_type = myinput.new_zeros(len(node_type.unique()),  graph.num_node)
                 
-                degree_in_type = scatter_add(myinput, myindex, out=degree_in_type)
+                degree_in_type = torch_scatter.scatter_add(myinput, myindex, out=degree_in_type)
                 num_nodes_per_type = torch.bincount(node_type)
                 
                 ########################
@@ -702,7 +702,7 @@ class KnowledgeGraphCompletionBiomed(tasks.KnowledgeGraphCompletion, core.Config
 
     
     @torch.no_grad()
-    def _strict_negative(self, pos_h_index, pos_t_index, pos_r_index, degree_in_type, num_nodes_per_type, graph):
+    def _strict_negative(self, pos_h_index, pos_t_index, pos_r_index, degree_in_type=None, num_nodes_per_type=None, graph=None):
         # TODO: set default for degree_in_type and num_nodes_per_type, in case of not using them
         if self.conditional_probability:
             # conditional probaility - classical KG setting
@@ -744,6 +744,7 @@ class KnowledgeGraphCompletionBiomed(tasks.KnowledgeGraphCompletion, core.Config
             return neg_index
         
         else:
+            # add assert that they're not none
             # joint probaility - better for finding all missing links
             node_type = graph.node_type
             
@@ -757,9 +758,10 @@ class KnowledgeGraphCompletionBiomed(tasks.KnowledgeGraphCompletion, core.Config
             
             # index the  degree of node h connecting to type t
             # number of nodes of type(t) - degree of node h connecting to type t
-            
+            import pdb; pdb.set_trace()
             prob = (num_nodes_per_type[pos_t_type].unsqueeze(1) - degree_in_type[pos_t_type]).float()
-            #TODO: also yields negative values, bcs of the num_nodes_per_type - degree_in_type (from undirected graph)
+            # TODO: also yields negative values, bcs of the num_nodes_per_type - degree_in_type (from undirected graph); multiple num_nodes_per_type by 2
+            # TODO: there is BUG; how to take different relation types into account?
             
             # if type_h == type_t, remove one from prob
             same_type_mask = pos_t_type == pos_h_type
