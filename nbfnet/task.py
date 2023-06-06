@@ -704,14 +704,14 @@ class KnowledgeGraphCompletionBiomed(tasks.KnowledgeGraphCompletion, core.Config
                 
             else:
             # joint probability
-                # graph = self.fact_graph
-                # graph = graph.undirected(add_inverse=True)
-                # num_nodes_per_type = torch.bincount(graph.node_type)
-                # degree_in_type = self.get_degree_in_type(graph)
+                graph = self.fact_graph
+                graph = graph.undirected(add_inverse=True)
+                num_nodes_per_type = torch.bincount(graph.node_type)
+                degree_in_type = self.get_degree_in_type(graph)
                 
-                graph = self.undirected_fact_graph
-                num_nodes_per_type = graph.num_nodes_per_type
-                degree_in_type = graph.degree_in_type
+                # graph = self.undirected_fact_graph
+                # num_nodes_per_type = graph.num_nodes_per_type
+                # degree_in_type = graph.degree_in_type
                 
                 
                 # Should it be strict_negative with 1 num_negative?
@@ -749,14 +749,14 @@ class KnowledgeGraphCompletionBiomed(tasks.KnowledgeGraphCompletion, core.Config
             else:
                 # joint probability
                 # calculate degree_in_type first
-                # graph = self.fact_graph
-                # graph = graph.undirected(add_inverse=True)
-                # num_nodes_per_type = torch.bincount(graph.node_type)
-                # degree_in_type = self.get_degree_in_type(graph)
+                graph = self.fact_graph
+                graph = graph.undirected(add_inverse=True)
+                num_nodes_per_type = torch.bincount(graph.node_type)
+                degree_in_type = self.get_degree_in_type(graph)
                 
-                graph = self.undirected_fact_graph
-                num_nodes_per_type = graph.num_nodes_per_type
-                degree_in_type = graph.degree_in_type
+                # graph = self.undirected_fact_graph
+                # num_nodes_per_type = graph.num_nodes_per_type
+                # degree_in_type = graph.degree_in_type
                 
                 # sample negative samples
                 if self.strict_negative:

@@ -1,8 +1,8 @@
-output_dir: /Users/yue.hu/Documents/proj/NBFNet/experiments/
+output_dir: /network/scratch/s/sophie.xhonneux/NBFNet/experiments/
 
 dataset:
   class: biomedical
-  path: /Users/yue.hu/Documents/proj/functionalannotation/NBFNet/data/mock
+  path: /home/mila/s/sophie.xhonneux/projects/NBFNet/NBFNet/data/mock
   include_factgraph: True
   
 task:

@@ -11,7 +11,7 @@ from torchdrug.utils import comm
 sys.path.append(os.path.dirname(os.path.dirname(__file__)))
 from nbfnet import dataset, layer, model, task, util
 
-def solver_load(checkpoint, load_optimizer=True):
+def solver_load(solver, checkpoint, load_optimizer=True):
 
     if comm.get_rank() == 0:
         logger.warning("Load checkpoint from %s" % checkpoint)
@@ -34,6 +34,7 @@ def solver_load(checkpoint, load_optimizer=True):
                     state[k] = v.to(solver.device)
 
     comm.synchronize()
+    import pdb; pdb.set_trace()
 
 
 def train_and_validate(cfg, solver):
@@ -57,7 +58,7 @@ def train_and_validate(cfg, solver):
             best_result = result
             best_epoch = solver.epoch
 
-    solver_load("model_epoch_%d.pth" % best_epoch)
+    solver_load(solver, "model_epoch_%d.pth" % best_epoch)
     return solver
 
 
