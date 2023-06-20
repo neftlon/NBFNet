@@ -437,7 +437,7 @@ class LncTarDLinkPred(data.KnowledgeGraphDataset):
         "valid.tsv",
         "test.tsv",]
 
-    entity_vocab_file = "entity_types.txt"
+    entity_vocab_file = "entity_types.tsv"
 
     def __init__(self, path, include_factgraph=True, fact_as_train=False, verbose=1):
         path = os.path.expanduser(path)
