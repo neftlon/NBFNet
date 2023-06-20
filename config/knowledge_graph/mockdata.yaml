@@ -2,7 +2,8 @@ output_dir: ~/experiments/
 
 dataset:
   class: biomedical
-  path: data/mock
+  #path: data/mock
+  path: "/content/drive/MyDrive/Link Prediction - ML4RG/data/nbfnet/NBFNet/data/mock/"
   include_factgraph: True
   
 task:
