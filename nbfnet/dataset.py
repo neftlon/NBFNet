@@ -433,9 +433,9 @@ class LncTarDLinkPred(data.KnowledgeGraphDataset):
     """
 
     files = [
-        "train.txt",
-        "valid.txt",
-        "test.txt",]
+        "train.tsv",
+        "valid.tsv",
+        "test.tsv",]
 
     entity_vocab_file = "entity_types.txt"
 
@@ -454,7 +454,7 @@ class LncTarDLinkPred(data.KnowledgeGraphDataset):
             txt_files.append(os.path.join(self.path, x))
         print(f"{chosen_files=}")
         
-        print(f"{os.getcwd()=}"); print(f"{os.listdir('data/lnctard')=}")
+        print(f"{os.getcwd()=}")#; print(f"{os.listdir('data/lnctard')=}")
 
         self.load_tsvs(txt_files, verbose=verbose)
         self.load_entity_types(path)
