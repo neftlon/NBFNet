@@ -1,9 +1,9 @@
 output_dir: ~/experiments/
 
 dataset:
-  class: biomedical
+  class: LncTarDLinkPred
   path: data/lnctard
-  include_factgraph: True
+  #include_factgraph: True
   
 task:
   class: KnowledgeGraphCompletionBiomed
