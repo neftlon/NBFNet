@@ -1,4 +1,5 @@
-output_dir: ~/experiments/
+#output_dir: ~/experiments/
+output_dir: .
 
 dataset:
   class: LncTarDLinkPred
