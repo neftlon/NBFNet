@@ -3,7 +3,7 @@ output_dir: ~/experiments/
 
 dataset:
   class: LncTarDLinkPred
-  path: "/content/drive/MyDrive/Link Prediction - ML4RG/data/nbfnet/NBFNet/"
+  path: "/content/drive/MyDrive/Link Prediction - ML4RG/data/nbfnet/NBFNet/data/lnctard/"
   #path: data/lnctard
   #include_factgraph: True
   
