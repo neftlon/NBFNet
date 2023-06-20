@@ -453,6 +453,8 @@ class LncTarDLinkPred(data.KnowledgeGraphDataset):
         for x in chosen_files:
             txt_files.append(os.path.join(self.path, x))
         print(f"{chosen_files=}")
+        
+        print(f"{os.getcwd()=}"); print(f"{os.listdir('data/lnctard')=}")
 
         self.load_tsvs(txt_files, verbose=verbose)
         self.load_entity_types(path)
