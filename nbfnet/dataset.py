@@ -441,6 +441,8 @@ class LncTarDLinkPred(data.KnowledgeGraphDataset):
 
     def __init__(self, path, include_factgraph=True, fact_as_train=False, verbose=1):
         path = os.path.expanduser(path)
+        print(f"{path=}")
+        
         self.path = path
         self.include_factgraph = include_factgraph
         self.fact_as_train = fact_as_train
@@ -450,6 +452,7 @@ class LncTarDLinkPred(data.KnowledgeGraphDataset):
         txt_files=[]
         for x in chosen_files:
             txt_files.append(os.path.join(self.path, x))
+        print(f"{chosen_files=}")
 
         self.load_tsvs(txt_files, verbose=verbose)
         self.load_entity_types(path)
@@ -487,6 +490,7 @@ class LncTarDLinkPred(data.KnowledgeGraphDataset):
         else:
             return splits
         
+    # NB(johannes, 230620): rg said this is unused...
     def get_fact1(self):
         if self.include_factgraph:
             return splits[0]
