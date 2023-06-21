@@ -390,11 +390,15 @@ class biomedical(data.KnowledgeGraphDataset):
         node_type = {}
         with open(os.path.join(path, self.entity_vocab_file), "r") as f:
             lines = f.readlines()
-            for line in lines:
-                entity_token, type_token = line.strip().split()
-                if type_token not in inv_type_vocab:
-                    inv_type_vocab[type_token] = len(inv_type_vocab)
-                node_type[self.inv_entity_vocab[entity_token]] = inv_type_vocab[type_token]
+            for lino,line in enumerate(lines):
+                try:
+                  entity_token, type_token = line.strip().split("\t")
+                except:
+                  print(lino+1, line, "value error")
+                else:
+                  if type_token not in inv_type_vocab:
+                      inv_type_vocab[type_token] = len(inv_type_vocab)
+                  node_type[self.inv_entity_vocab[entity_token]] = inv_type_vocab[type_token]
 
         assert len(node_type) == self.num_entity
         _, node_type = zip(*sorted(node_type.items()))
@@ -464,11 +468,15 @@ class LncTarDLinkPred(data.KnowledgeGraphDataset):
         node_type = {}
         with open(os.path.join(path, self.entity_vocab_file), "r") as f:
             lines = f.readlines()
-            for line in lines:
-                entity_token, type_token = line.strip().split()
-                if type_token not in inv_type_vocab:
-                    inv_type_vocab[type_token] = len(inv_type_vocab)
-                node_type[self.inv_entity_vocab[entity_token]] = inv_type_vocab[type_token]
+            for lino, line in enumerate(lines):
+                try:
+                  entity_token, type_token = line.strip().split()
+                except:
+                  print(lino, line, "value error")
+                else:
+                  if type_token not in inv_type_vocab:
+                      inv_type_vocab[type_token] = len(inv_type_vocab)
+                  node_type[self.inv_entity_vocab[entity_token]] = inv_type_vocab[type_token]
 
         assert len(node_type) == self.num_entity
         _, node_type = zip(*sorted(node_type.items()))
