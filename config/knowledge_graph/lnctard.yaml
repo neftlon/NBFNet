@@ -2,10 +2,11 @@ output_dir: ~/experiments/
 #output_dir: .
 
 dataset:
-  class: LncTarDLinkPred
+  #class: LncTarDLinkPred
+  class: biomedical
   path: "/content/drive/MyDrive/Link Prediction - ML4RG/data/nbfnet/NBFNet/data/lnctard/"
   #path: data/lnctard
-  #include_factgraph: True
+  include_factgraph: True
   
 task:
   class: KnowledgeGraphCompletionBiomed
