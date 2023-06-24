@@ -171,7 +171,6 @@ class PubMedLinkPrediction(datasets.PubMed):
 
 @R.register("datasets.FB15k237Inductive")
 class FB15k237Inductive(InductiveKnowledgeGraphDataset):
-
     train_urls = [
         "https://raw.githubusercontent.com/kkteru/grail/master/data/fb237_%s/train.txt",
         "https://raw.githubusercontent.com/kkteru/grail/master/data/fb237_%s/valid.txt",
@@ -210,7 +209,6 @@ class FB15k237Inductive(InductiveKnowledgeGraphDataset):
 
 @R.register("datasets.WN18RRInductive")
 class WN18RRInductive(InductiveKnowledgeGraphDataset):
-
     train_urls = [
         "https://raw.githubusercontent.com/kkteru/grail/master/data/WN18RR_%s/train.txt",
         "https://raw.githubusercontent.com/kkteru/grail/master/data/WN18RR_%s/valid.txt",
@@ -354,7 +352,6 @@ class OGBLBioKG(data.KnowledgeGraphDataset):
             neg_offset += num_sample_with_neg
         return splits
 
-    
 
 @R.register("datasets.biomedical")
 class biomedical(data.KnowledgeGraphDataset):
@@ -363,10 +360,10 @@ class biomedical(data.KnowledgeGraphDataset):
     """
 
     files = [
-        "train1.txt", # such as biogrid
+        "train1.txt",  # such as biogrid
         "train2.txt",  # such as KEGG train
-        "valid.txt", # such as KEGG valid
-        "test.txt",] # such as KEGG test
+        "valid.txt",  # such as KEGG valid
+        "test.txt", ]  # such as KEGG test
 
     entity_vocab_file = "entity_types.txt"
 
@@ -375,90 +372,12 @@ class biomedical(data.KnowledgeGraphDataset):
         self.path = path
         self.include_factgraph = include_factgraph
         self.fact_as_train = fact_as_train
-        
+
         chosen_files = self.files if self.include_factgraph else self.files[1:]
 
-        txt_files=[]
+        txt_files = []
         for x in chosen_files:
             txt_files.append(os.path.join(self.path, x))
-
-        self.load_tsvs(txt_files, verbose=verbose)
-        self.load_entity_types(path)
-
-    def load_entity_types(self, path) -> None:
-        inv_type_vocab = {}
-        node_type = {}
-        with open(os.path.join(path, self.entity_vocab_file), "r") as f:
-            lines = f.readlines()
-            for lino,line in enumerate(lines):
-                try:
-                  entity_token, type_token = line.strip().split("\t")
-                except:
-                  print(lino+1, line, "value error")
-                else:
-                  if type_token not in inv_type_vocab:
-                      inv_type_vocab[type_token] = len(inv_type_vocab)
-                  node_type[self.inv_entity_vocab[entity_token]] = inv_type_vocab[type_token]
-
-        assert len(node_type) == self.num_entity
-        _, node_type = zip(*sorted(node_type.items()))
-        
-        with self.graph.node():
-            self.graph.node_type = torch.tensor(node_type)
-
-    def split(self):
-        offset = 0
-        splits = []
-        num_samples = self.num_samples
-        if self.include_factgraph and self.fact_as_train:
-            num_samples = [num_samples[0] + num_samples[1]] + num_samples[2:]
-        for num_sample in num_samples:
-            split = torch_data.Subset(self, range(offset, offset + num_sample))
-            splits.append(split)
-            offset += num_sample
-            
-        if self.include_factgraph and not self.fact_as_train:
-            return splits[1:]
-        else:
-            return splits
-        
-    def get_fact1(self):
-        if self.include_factgraph:
-            return splits[0]
-        else:
-            return None
-
-    
-
-@R.register("datasets.LncTarDLinkPred")
-class LncTarDLinkPred(data.KnowledgeGraphDataset):
-    """
-    load training, validation and testing triplets from multiple files
-    """
-
-    files = [
-        "train.tsv",
-        "valid.tsv",
-        "test.tsv",]
-
-    entity_vocab_file = "entity_types.tsv"
-
-    def __init__(self, path, include_factgraph=True, fact_as_train=False, verbose=1):
-        path = os.path.expanduser(path)
-        print(f"{path=}")
-        
-        self.path = path
-        self.include_factgraph = include_factgraph
-        self.fact_as_train = fact_as_train
-        
-        chosen_files = self.files if self.include_factgraph else self.files[1:]
-
-        txt_files=[]
-        for x in chosen_files:
-            txt_files.append(os.path.join(self.path, x))
-        print(f"{chosen_files=}")
-        
-        print(f"{os.getcwd()=}")#; print(f"{os.listdir('data/lnctard')=}")
 
         self.load_tsvs(txt_files, verbose=verbose)
         self.load_entity_types(path)
@@ -470,17 +389,17 @@ class LncTarDLinkPred(data.KnowledgeGraphDataset):
             lines = f.readlines()
             for lino, line in enumerate(lines):
                 try:
-                  entity_token, type_token = line.strip().split()
+                    entity_token, type_token = line.strip().split("\t")
                 except:
-                  print(lino, line, "value error")
+                    print(lino + 1, line, "value error")
                 else:
-                  if type_token not in inv_type_vocab:
-                      inv_type_vocab[type_token] = len(inv_type_vocab)
-                  node_type[self.inv_entity_vocab[entity_token]] = inv_type_vocab[type_token]
+                    if type_token not in inv_type_vocab:
+                        inv_type_vocab[type_token] = len(inv_type_vocab)
+                    node_type[self.inv_entity_vocab[entity_token]] = inv_type_vocab[type_token]
 
         assert len(node_type) == self.num_entity
         _, node_type = zip(*sorted(node_type.items()))
-        
+
         with self.graph.node():
             self.graph.node_type = torch.tensor(node_type)
 
@@ -494,16 +413,165 @@ class LncTarDLinkPred(data.KnowledgeGraphDataset):
             split = torch_data.Subset(self, range(offset, offset + num_sample))
             splits.append(split)
             offset += num_sample
-            
+
         if self.include_factgraph and not self.fact_as_train:
             return splits[1:]
         else:
             return splits
-        
+
+    def get_fact1(self):
+        if self.include_factgraph:
+            return splits[0]
+        else:
+            return None
+
+
+@R.register("datasets.LncTarDPPI")
+class LncTarDPPI(data.KnowledgeGraphDataset):
+    """
+    load training, validation and testing triplets from multiple files
+    """
+
+    files = [
+        "train1-ppi.txt",  # such as biogrid
+        "train.txt",  # such as KEGG train
+        "valid.txt",  # such as KEGG valid
+        "test.txt", ]  # such as KEGG test
+
+    entity_vocab_file = "entity_types.txt"
+
+    def __init__(self, path, include_factgraph=True, fact_as_train=False, verbose=1):
+        path = os.path.expanduser(path)
+        self.path = path
+        self.include_factgraph = include_factgraph
+        self.fact_as_train = fact_as_train
+
+        chosen_files = self.files if self.include_factgraph else self.files[1:]
+
+        txt_files = []
+        for x in chosen_files:
+            txt_files.append(os.path.join(self.path, x))
+
+        self.load_tsvs(txt_files, verbose=verbose)
+        self.load_entity_types(path)
+
+    def load_entity_types(self, path) -> None:
+        inv_type_vocab = {}
+        node_type = {}
+        with open(os.path.join(path, self.entity_vocab_file), "r") as f:
+            lines = f.readlines()
+            for lino, line in enumerate(lines):
+                try:
+                    entity_token, type_token = line.strip().split("\t")
+                except:
+                    print(lino + 1, line, "value error")
+                else:
+                    if type_token not in inv_type_vocab:
+                        inv_type_vocab[type_token] = len(inv_type_vocab)
+                    node_type[self.inv_entity_vocab[entity_token]] = inv_type_vocab[type_token]
+
+        assert len(node_type) == self.num_entity
+        _, node_type = zip(*sorted(node_type.items()))
+
+        with self.graph.node():
+            self.graph.node_type = torch.tensor(node_type)
+
+    def split(self):
+        offset = 0
+        splits = []
+        num_samples = self.num_samples
+        if self.include_factgraph and self.fact_as_train:
+            num_samples = [num_samples[0] + num_samples[1]] + num_samples[2:]
+        for num_sample in num_samples:
+            split = torch_data.Subset(self, range(offset, offset + num_sample))
+            splits.append(split)
+            offset += num_sample
+
+        if self.include_factgraph and not self.fact_as_train:
+            return splits[1:]
+        else:
+            return splits
+
+    def get_fact1(self):
+        if self.include_factgraph:
+            return splits[0]
+        else:
+            return None
+
+
+@R.register("datasets.LncTarD")
+class LncTarD(data.KnowledgeGraphDataset):
+    """
+    load training, validation and testing triplets from multiple files
+    """
+
+    files = [
+        "train.tsv",
+        "valid.tsv",
+        "test.tsv", ]
+
+    entity_vocab_file = "entity_types.tsv"
+
+    def __init__(self, path, include_factgraph=True, fact_as_train=False, verbose=1):
+        path = os.path.expanduser(path)
+        print(f"{path=}")
+
+        self.path = path
+        self.include_factgraph = include_factgraph
+        self.fact_as_train = fact_as_train
+
+        chosen_files = self.files if self.include_factgraph else self.files[1:]
+
+        txt_files = []
+        for x in chosen_files:
+            txt_files.append(os.path.join(self.path, x))
+        print(f"{chosen_files=}")
+
+        print(f"{os.getcwd()=}")  # ; print(f"{os.listdir('data/lnctard')=}")
+
+        self.load_tsvs(txt_files, verbose=verbose)
+        self.load_entity_types(path)
+
+    def load_entity_types(self, path) -> None:
+        inv_type_vocab = {}
+        node_type = {}
+        with open(os.path.join(path, self.entity_vocab_file), "r") as f:
+            lines = f.readlines()
+            for lino, line in enumerate(lines):
+                try:
+                    entity_token, type_token = line.strip().split()
+                except:
+                    print(lino, line, "value error")
+                else:
+                    if type_token not in inv_type_vocab:
+                        inv_type_vocab[type_token] = len(inv_type_vocab)
+                    node_type[self.inv_entity_vocab[entity_token]] = inv_type_vocab[type_token]
+
+        assert len(node_type) == self.num_entity
+        _, node_type = zip(*sorted(node_type.items()))
+
+        with self.graph.node():
+            self.graph.node_type = torch.tensor(node_type)
+
+    def split(self):
+        offset = 0
+        splits = []
+        num_samples = self.num_samples
+        if self.include_factgraph and self.fact_as_train:
+            num_samples = [num_samples[0] + num_samples[1]] + num_samples[2:]
+        for num_sample in num_samples:
+            split = torch_data.Subset(self, range(offset, offset + num_sample))
+            splits.append(split)
+            offset += num_sample
+
+        if self.include_factgraph and not self.fact_as_train:
+            return splits[1:]
+        else:
+            return splits
+
     # NB(johannes, 230620): rg said this is unused...
     def get_fact1(self):
         if self.include_factgraph:
             return splits[0]
         else:
             return None
-    

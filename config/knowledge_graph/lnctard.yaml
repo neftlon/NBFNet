@@ -1,11 +1,8 @@
-output_dir: ~/experiments/
-#output_dir: .
+output_dir: results/LncTarD
 
 dataset:
-  #class: LncTarDLinkPred
-  class: biomedical
-  path: "/content/drive/MyDrive/Link Prediction - ML4RG/data/nbfnet/NBFNet/data/lnctard/"
-  #path: data/lnctard
+  class: LncTarD
+  path: data/lnctard
   include_factgraph: True
   
 task:
@@ -30,9 +27,6 @@ task:
   conditional_probability: yes
   full_batch_eval: False
 
-
-
-
 optimizer:
   class: Adam
   lr: 5.0e-3
@@ -40,10 +34,8 @@ optimizer:
 engine:
   gpus: {{ gpus }}
   batch_size: 32
-  
 
 train:
-  num_epoch: 10
-  batch_per_epoch: 100
-  
-metric: "mrr"
+  num_epoch: 20
+
+metric: mrr
