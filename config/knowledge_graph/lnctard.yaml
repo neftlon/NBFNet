@@ -2,11 +2,11 @@ output_dir: results/LncTarD
 
 dataset:
   class: LncTarD
-  path: data/lnctard
+  path: /home/linkpred/NBFNet/data/lnctard
   include_factgraph: True
   
 task:
-  class: KnowledgeGraphCompletionBiomed
+  class: KnowledgeGraphCompletion
   model:
     class: NBFNet
     input_dim: 32
@@ -22,10 +22,6 @@ task:
   strict_negative: yes
   adversarial_temperature: 0.5
   sample_weight: no
-  heterogeneous_negative: yes
-  heterogeneous_evaluation: yes
-  conditional_probability: yes
-  full_batch_eval: False
 
 optimizer:
   class: Adam

@@ -459,16 +459,12 @@ class LncTarDPPI(data.KnowledgeGraphDataset):
         inv_type_vocab = {}
         node_type = {}
         with open(os.path.join(path, self.entity_vocab_file), "r") as f:
-            lines = f.readlines()
-            for lino, line in enumerate(lines):
-                try:
-                    entity_token, type_token = line.strip().split("\t")
-                except:
-                    print(lino + 1, line, "value error")
-                else:
-                    if type_token not in inv_type_vocab:
-                        inv_type_vocab[type_token] = len(inv_type_vocab)
-                    node_type[self.inv_entity_vocab[entity_token]] = inv_type_vocab[type_token]
+            reader = csv.reader(f, delimiter="\t")
+            for tokens in reader:
+                entity_token, type_token = tokens
+                if type_token not in inv_type_vocab:
+                    inv_type_vocab[type_token] = len(inv_type_vocab)
+                node_type[self.inv_entity_vocab[entity_token]] = inv_type_vocab[type_token]
 
         assert len(node_type) == self.num_entity
         _, node_type = zip(*sorted(node_type.items()))
@@ -506,11 +502,11 @@ class LncTarD(data.KnowledgeGraphDataset):
     """
 
     files = [
-        "train.tsv",
-        "valid.tsv",
-        "test.tsv", ]
+        "train.txt",
+        "valid.txt",
+        "test.txt", ]
 
-    entity_vocab_file = "entity_types.tsv"
+    entity_vocab_file = "entity_types.txt"
 
     def __init__(self, path, include_factgraph=True, fact_as_train=False, verbose=1):
         path = os.path.expanduser(path)
@@ -536,16 +532,12 @@ class LncTarD(data.KnowledgeGraphDataset):
         inv_type_vocab = {}
         node_type = {}
         with open(os.path.join(path, self.entity_vocab_file), "r") as f:
-            lines = f.readlines()
-            for lino, line in enumerate(lines):
-                try:
-                    entity_token, type_token = line.strip().split()
-                except:
-                    print(lino, line, "value error")
-                else:
-                    if type_token not in inv_type_vocab:
-                        inv_type_vocab[type_token] = len(inv_type_vocab)
-                    node_type[self.inv_entity_vocab[entity_token]] = inv_type_vocab[type_token]
+            reader = csv.reader(f, delimiter="\t")
+            for tokens in reader:
+                entity_token, type_token = tokens
+                if type_token not in inv_type_vocab:
+                    inv_type_vocab[type_token] = len(inv_type_vocab)
+                node_type[self.inv_entity_vocab[entity_token]] = inv_type_vocab[type_token]
 
         assert len(node_type) == self.num_entity
         _, node_type = zip(*sorted(node_type.items()))
