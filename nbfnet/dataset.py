@@ -438,7 +438,7 @@ class LncTarDPPI(data.KnowledgeGraphDataset):
         "valid.txt",  # such as KEGG valid
         "test.txt", ]  # such as KEGG test
 
-    entity_vocab_file = "entity_types.txt"
+    entity_vocab_file = "entity_types_lnctardppi.txt"
 
     def __init__(self, path, include_factgraph=True, fact_as_train=False, verbose=1):
         path = os.path.expanduser(path)
