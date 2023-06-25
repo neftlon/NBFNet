@@ -3,7 +3,7 @@ output_dir: results/LncTarD
 dataset:
   class: LncTarDPPI
   path: /home/linkpred/NBFNet/data/lnctard
-  include_factgraph: False
+  include_factgraph: True
   
 task:
   class: KnowledgeGraphCompletionBiomed
@@ -33,7 +33,7 @@ optimizer:
 
 engine:
   gpus: {{ gpus }}
-  batch_size: 64
+  batch_size: 32
 
 train:
   num_epoch: 10
