@@ -1,4 +1,4 @@
-output_dir: ~/experiments/
+output_dir: results/mock
 
 dataset:
   class: biomedical
