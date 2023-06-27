@@ -71,6 +71,8 @@ def test(cfg, solver):
 
 if __name__ == "__main__":
     args, vars = util.parse_args()
+    print(f"{args=}")
+    print(f"{vars=}")
     cfg = util.load_config(args.config, context=vars)
     working_dir = util.create_working_directory(cfg)
 
@@ -84,7 +86,7 @@ if __name__ == "__main__":
     dataset = core.Configurable.load_config_dict(cfg.dataset)
     solver = util.build_solver(cfg, dataset)
 
-    if "--profile" in sys.args:
+    if "--profile" in args:
       print("running train/val with profiler")
       
       with profile(activities=[ProfilerActivity.CPU,ProfilerActivity.CUDA],
