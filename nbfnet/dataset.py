@@ -516,7 +516,7 @@ class LncTarD(data.KnowledgeGraphDataset):
         self.include_factgraph = include_factgraph
         self.fact_as_train = fact_as_train
 
-        chosen_files = self.files if self.include_factgraph else self.files[1:]
+        chosen_files = self.files
 
         txt_files = []
         for x in chosen_files:
