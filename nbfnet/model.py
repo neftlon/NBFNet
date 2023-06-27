@@ -141,7 +141,7 @@ class NeuralBellmanFordNetwork(nn.Module, core.Configurable):
             "step_graphs": step_graphs,
         }
 
-    def forward(self, graph, h_index, t_index, r_index=None, all_loss=None, metric=None, conditional_probability=False):
+    def forward(self, graph, h_index, t_index, r_index=None, all_loss=None, metric=None, conditional_probability=True):
         if all_loss is not None:
             # train
             # remove both r and r-1 edges if conditional_probability=False
