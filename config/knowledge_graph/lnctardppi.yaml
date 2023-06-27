@@ -22,9 +22,6 @@ task:
   strict_negative: yes
   adversarial_temperature: 0.5
   sample_weight: no
-  heterogeneous_negative: yes
-  heterogeneous_evaluation: yes
-  conditional_probability: yes
   full_batch_eval: False
 
 optimizer:
