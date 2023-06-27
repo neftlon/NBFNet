@@ -4,6 +4,7 @@ import math
 import pprint
 
 import torch
+from torch.profiler import profile, record_function, ProfilerActivity
 
 from torchdrug import core, models
 from torchdrug.utils import comm
@@ -83,5 +84,14 @@ if __name__ == "__main__":
     dataset = core.Configurable.load_config_dict(cfg.dataset)
     solver = util.build_solver(cfg, dataset)
 
-    train_and_validate(cfg, solver)
+    if "--profile" in sys.args:
+      print("running train/val with profiler")
+      
+      with profile(activities=[ProfilerActivity.CPU,ProfilerActivity.CUDA],
+        profile_memory=True, record_shapes=True) as prof:
+        train_and_validate(cfg, solver)
+      
+      print(prof.key_averages().table(row_limit=10))
+    else:
+      train_and_validate(cfg, solver)
     test(cfg, solver)
