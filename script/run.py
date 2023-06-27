@@ -86,14 +86,12 @@ if __name__ == "__main__":
     dataset = core.Configurable.load_config_dict(cfg.dataset)
     solver = util.build_solver(cfg, dataset)
 
-    if "--profile" in args:
-      print("running train/val with profiler")
-      
-      with profile(activities=[ProfilerActivity.CPU,ProfilerActivity.CUDA],
-        profile_memory=True, record_shapes=True) as prof:
-        train_and_validate(cfg, solver)
-      
-      print(prof.key_averages().table(row_limit=10))
-    else:
+    print("running train/val with profiler")
+    
+    with profile(activities=[ProfilerActivity.CPU,ProfilerActivity.CUDA],
+      profile_memory=True, record_shapes=True) as prof:
       train_and_validate(cfg, solver)
+      
+    print(prof.key_averages().table(row_limit=10))
+    
     test(cfg, solver)
