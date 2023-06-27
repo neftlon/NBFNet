@@ -145,7 +145,6 @@ class NeuralBellmanFordNetwork(nn.Module, core.Configurable):
         if all_loss is not None:
             # train
             # remove both r and r-1 edges if conditional_probability=False
-            print(f"{graph.num_relation=}, {self.num_relation=}")
             if conditional_probability:
                 assert graph.num_relation == self.num_relation
                 graph = self.remove_easy_edges(graph, h_index, t_index, r_index)
