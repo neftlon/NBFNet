@@ -3,7 +3,7 @@ output_dir: results/LncTarD
 dataset:
   class: LncTarD
   path: /home/linkpred/NBFNet/data/lnctard
-  include_factgraph: True
+  include_factgraph: False
   
 task:
   class: KnowledgeGraphCompletion
@@ -22,6 +22,9 @@ task:
   strict_negative: yes
   adversarial_temperature: 0.5
   sample_weight: no
+  heterogeneous_negative: yes
+  heterogeneous_evaluation: yes
+  conditional_probability: yes
 
 optimizer:
   class: Adam
@@ -33,5 +36,6 @@ engine:
 
 train:
   num_epoch: 20
+  batch_per_epoch: 100
 
-metric: mrr
+metric: "mrr"
