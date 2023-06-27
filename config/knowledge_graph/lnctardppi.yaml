@@ -2,7 +2,8 @@ output_dir: results/LncTarD
 
 dataset:
   class: LncTarDPPI
-  path: /home/linkpred/NBFNet/data/lnctard
+  #path: /home/linkpred/NBFNet/data/lnctard
+  path: /home/ubuntu/linkpred/NBFNet/data/lnctard
   include_factgraph: True
   
 task:
