@@ -92,6 +92,7 @@ if __name__ == "__main__":
       profile_memory=True, record_shapes=True) as prof:
       train_and_validate(cfg, solver)
       
+    print("profiler output")
     print(prof.key_averages().table(row_limit=10))
     
     test(cfg, solver)
