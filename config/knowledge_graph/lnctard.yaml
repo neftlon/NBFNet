@@ -22,6 +22,7 @@ task:
   strict_negative: yes
   adversarial_temperature: 0.5
   sample_weight: no
+  conditional_probability: yes
 
 optimizer:
   class: Adam
