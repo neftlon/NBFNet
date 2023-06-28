@@ -567,3 +567,72 @@ class LncTarD(data.KnowledgeGraphDataset):
             return splits[0]
         else:
             return None
+
+
+@R.register("datasets.LncTarD2")
+class LncTarD2(data.KnowledgeGraphDataset):
+    """
+    load training, validation and testing triplets from multiple files
+    """
+
+    files = [
+        "message_passing.txt",  # such as biogrid
+        "supervision.txt",  # such as KEGG train
+        "valid.txt",  # such as KEGG valid
+        "test.txt", ]  # such as KEGG test
+
+    entity_vocab_file = "entity_types.txt"
+
+    def __init__(self, path, include_factgraph=True, fact_as_train=False, verbose=1):
+        path = os.path.expanduser(path)
+        self.path = path
+        self.include_factgraph = include_factgraph
+        self.fact_as_train = fact_as_train
+
+        chosen_files = self.files if self.include_factgraph else self.files[1:]
+
+        txt_files = []
+        for x in chosen_files:
+            txt_files.append(os.path.join(self.path, x))
+
+        self.load_tsvs(txt_files, verbose=verbose)
+        self.load_entity_types(path)
+
+    def load_entity_types(self, path) -> None:
+        inv_type_vocab = {}
+        node_type = {}
+        with open(os.path.join(path, self.entity_vocab_file), "r") as f:
+            reader = csv.reader(f, delimiter="\t")
+            for tokens in reader:
+                entity_token, type_token = tokens
+                if type_token not in inv_type_vocab:
+                    inv_type_vocab[type_token] = len(inv_type_vocab)
+                node_type[self.inv_entity_vocab[entity_token]] = inv_type_vocab[type_token]
+
+        assert len(node_type) == self.num_entity
+        _, node_type = zip(*sorted(node_type.items()))
+
+        with self.graph.node():
+            self.graph.node_type = torch.tensor(node_type)
+
+    def split(self):
+        offset = 0
+        splits = []
+        num_samples = self.num_samples
+        if self.include_factgraph and self.fact_as_train:
+            num_samples = [num_samples[0] + num_samples[1]] + num_samples[2:]
+        for num_sample in num_samples:
+            split = torch_data.Subset(self, range(offset, offset + num_sample))
+            splits.append(split)
+            offset += num_sample
+
+        if self.include_factgraph and not self.fact_as_train:
+            return splits[1:]
+        else:
+            return splits
+
+    def get_fact1(self):
+        if self.include_factgraph:
+            return splits[0]
+        else:
+            return None
