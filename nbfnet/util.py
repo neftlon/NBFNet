@@ -83,6 +83,7 @@ def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument("-c", "--config", help="yaml configuration file", required=True)
     parser.add_argument("-s", "--seed", help="random seed for PyTorch", type=int, default=1024)
+    parser.add_argument("-p", "--profile", help="run the program with CPU/GPU memory profiler attached", action="store_true")
 
     args, unparsed = parser.parse_known_args()
     # get dynamic arguments defined in the config file
