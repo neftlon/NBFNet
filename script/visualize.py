@@ -48,8 +48,8 @@ def visualize_path(solver, triplet, entity_vocab, relation_vocab):
     samples = (triplet, inverse)
     for sample, ranking in zip(samples, rankings):
         h, t, r = sample.squeeze(0).tolist()
-        h_name = entity_vocab[h]
-        t_name = entity_vocab[t]
+        h_name = f"{h} ({entity_vocab[h]})"
+        t_name = f"{t} ({entity_vocab[t]})"
         r_name = relation_vocab[r % num_relation]
         if r >= num_relation:
             r_name += "^(-1)"
