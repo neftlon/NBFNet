@@ -89,5 +89,5 @@ if __name__ == "__main__":
 
     entity_vocab, relation_vocab = load_vocab(dataset)
 
-    for i in range(max(500, len(solver.test_set))):
+    for i in range(min(500, len(solver.test_set))):
         visualize_path(solver, solver.test_set[i], entity_vocab, relation_vocab)
