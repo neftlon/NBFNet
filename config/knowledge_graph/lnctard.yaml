@@ -2,8 +2,8 @@ output_dir: results/LncTarD
 
 dataset:
   class: LncTarD
-  #path: /home/linkpred/NBFNet/data/lnctard
-  path: /home/ubuntu/linkpred/NBFNet/data/lnctard
+  path: /home/linkpred/NBFNet/data/lnctard
+  #path: /home/ubuntu/linkpred/NBFNet/data/lnctard
   include_factgraph: False
   
 task:
