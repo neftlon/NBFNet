@@ -1,6 +1,7 @@
 import os
 import sys
 import pprint
+import csv
 
 import torch
 
@@ -19,6 +20,9 @@ vocab_file = os.path.join(os.path.dirname(__file__), "../data/lnctard/entity_typ
 
 vocab_file = os.path.abspath(vocab_file)
 
+type_file = os.path.join(os.path.dirname(__file__), "../data/lnctard/type_to_id.tsv")
+type_file = os.path.abspath(type_file)
+
 
 def load_vocab(dataset):
     entity_mapping = {}
@@ -33,7 +37,7 @@ def load_vocab(dataset):
     return entity_vocab, relation_vocab
 
 
-def visualize_path(solver, triplet, entity_vocab, relation_vocab, entity_index_to_name):
+def visualize_path(solver, triplet, entity_vocab, relation_vocab, entity_index_to_name, type_to_name):
     num_relation = len(relation_vocab)
     h, t, r = triplet.tolist()
     triplet = torch.as_tensor([[h, t, r]], device=solver.device)
@@ -48,8 +52,8 @@ def visualize_path(solver, triplet, entity_vocab, relation_vocab, entity_index_t
     samples = (triplet, inverse)
     for sample, ranking in zip(samples, rankings):
         h, t, r = sample.squeeze(0).tolist()
-        h_name = f"{entity_index_to_name[h]} ({entity_vocab[h]})"
-        t_name = f"{entity_index_to_name[t]} ({entity_vocab[t]})"
+        h_name = f"{entity_index_to_name[h]} ({type_to_name[entity_vocab[h]]})"
+        t_name = f"{entity_index_to_name[t]} ({type_to_name[entity_vocab[t]]})"
         r_name = relation_vocab[r % num_relation]
         if r >= num_relation:
             r_name += "^(-1)"
@@ -60,8 +64,8 @@ def visualize_path(solver, triplet, entity_vocab, relation_vocab, entity_index_t
         for path, weight in zip(paths, weights):
             triplets = []
             for h, t, r in path:
-                h_name = f"{entity_index_to_name[h]} ({entity_vocab[h]})"
-                t_name = f"{entity_index_to_name[t]} ({entity_vocab[t]})"
+                h_name = f"{entity_index_to_name[h]} ({type_to_name[entity_vocab[h]]})"
+                t_name = f"{entity_index_to_name[t]} ({type_to_name[entity_vocab[t]]})"
                 r_name = relation_vocab[r % num_relation]
                 if r >= num_relation:
                     r_name += "^(-1)"
@@ -92,5 +96,10 @@ if __name__ == "__main__":
     entity_vocab, relation_vocab = load_vocab(dataset)
     entity_index_to_name = dataset.entity_vocab
 
+    with open(type_file, "r") as type_tsv:
+        reader = csv.reader(type_tsv, delimiter="\t")
+        next(reader)
+        type_to_name = {int(row[0]): row[1] for row in reader}
+
     for i in range(min(500, len(solver.test_set))):
-        visualize_path(solver, solver.test_set[i], entity_vocab, relation_vocab, entity_index_to_name)
+        visualize_path(solver, solver.test_set[i], entity_vocab, relation_vocab, entity_index_to_name, type_to_name)
