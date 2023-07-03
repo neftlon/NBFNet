@@ -52,8 +52,8 @@ def visualize_path(solver, triplet, entity_vocab, relation_vocab, entity_index_t
     samples = (triplet, inverse)
     for sample, ranking in zip(samples, rankings):
         h, t, r = sample.squeeze(0).tolist()
-        h_name = f"{entity_index_to_name[h]} ({type_to_name[entity_vocab[h]]})"
-        t_name = f"{entity_index_to_name[t]} ({type_to_name[entity_vocab[t]]})"
+        h_name = f"{entity_index_to_name[h]} ({type_to_name[int(entity_vocab[h])]})"
+        t_name = f"{entity_index_to_name[t]} ({type_to_name[int(entity_vocab[t])]})"
         r_name = relation_vocab[r % num_relation]
         if r >= num_relation:
             r_name += "^(-1)"
@@ -64,8 +64,8 @@ def visualize_path(solver, triplet, entity_vocab, relation_vocab, entity_index_t
         for path, weight in zip(paths, weights):
             triplets = []
             for h, t, r in path:
-                h_name = f"{entity_index_to_name[h]} ({type_to_name[entity_vocab[h]]})"
-                t_name = f"{entity_index_to_name[t]} ({type_to_name[entity_vocab[t]]})"
+                h_name = f"{entity_index_to_name[h]} ({type_to_name[int(entity_vocab[h])]})"
+                t_name = f"{entity_index_to_name[t]} ({type_to_name[int(entity_vocab[t])]})"
                 r_name = relation_vocab[r % num_relation]
                 if r >= num_relation:
                     r_name += "^(-1)"
