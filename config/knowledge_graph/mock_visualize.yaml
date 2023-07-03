@@ -1,12 +1,12 @@
 output_dir: results/mock
 
 dataset:
-  class: biomedical
+  class: LncTarD
   path: /home/linkpred/NBFNet/data/mock
-  include_factgraph: True
+  include_factgraph: False
 
 task:
-  class: KnowledgeGraphCompletionBiomed
+  class: KnowledgeGraphCompletion
   model:
     class: NBFNet
     input_dim: 32
@@ -22,10 +22,6 @@ task:
   strict_negative: yes
   adversarial_temperature: 0.5
   sample_weight: no
-  heterogeneous_negative: yes
-  heterogeneous_evaluation: yes
-  conditional_probability: yes
-  full_batch_eval: False
 
 optimizer:
   class: Adam
@@ -36,7 +32,7 @@ engine:
   batch_size: 32
 
 checkpoint: {{ checkpoint }}
-
+  
 metric: "mrr"
 
 
