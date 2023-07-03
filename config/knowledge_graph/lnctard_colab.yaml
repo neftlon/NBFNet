@@ -2,8 +2,7 @@ output_dir: results/LncTarD
 
 dataset:
   class: LncTarD
-  #path: /home/linkpred/NBFNet/data/lnctard
-  path: /home/ubuntu/linkpred/NBFNet/data/lnctard
+  path: "/content/drive/MyDrive/Link Prediction - ML4RG/data/nbfnet/NBFNet/data/lnctard"
   include_factgraph: False
   
 task:
@@ -33,7 +32,7 @@ engine:
   batch_size: 32
 
 train:
-  num_epoch: 20
+  num_epoch: 1
   batch_per_epoch: 100
 
 metric: "mrr"
