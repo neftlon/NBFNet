@@ -4,7 +4,7 @@ dataset:
   class: LncTarD
   path: /home/linkpred/NBFNet/data/mock
   include_factgraph: False
-
+  
 task:
   class: KnowledgeGraphCompletion
   model:
@@ -31,8 +31,8 @@ engine:
   gpus: {{ gpus }}
   batch_size: 32
 
-checkpoint: {{ checkpoint }}
-  
+train:
+  num_epoch: 20
+  batch_per_epoch: 100
+
 metric: "mrr"
-
-

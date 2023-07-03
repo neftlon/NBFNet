@@ -11,9 +11,10 @@ sys.path.append(os.path.dirname(os.path.dirname(__file__)))
 from nbfnet import dataset, layer, model, task, util
 
 
-#vocab_file = os.path.join(os.path.dirname(__file__), "../data/fb15k237_entity.txt")
+# vocab_file = os.path.join(os.path.dirname(__file__), "../data/fb15k237_entity.txt")
 # vocab_file = os.path.join(os.path.dirname(__file__), "../data/PC_KEGG_0928/PC_KEGG_CHEBI_entities.txt")
-vocab_file = os.path.join(os.path.dirname(__file__), "../data/lnctard/entity_types.txt")
+# vocab_file = os.path.join(os.path.dirname(__file__), "../data/lnctard/entity_types.txt")
+vocab_file = os.path.join(os.path.dirname(__file__), "../data/mock/entity_types.txt")
 vocab_file = os.path.abspath(vocab_file)
 
 
