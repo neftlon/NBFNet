@@ -215,6 +215,20 @@ class NeuralBellmanFordNetwork(nn.Module, core.Configurable):
 
         return paths, weights
 
+    @staticmethod
+    def _size_to_index(size):
+        """
+        Convert sizes to variadic indexes.
+        Example::
+            index = _size_to_index(torch.tensor([3, 2, 1]))
+            assert (index == torch.tensor([0, 0, 0, 1, 1, 2])).all()
+        Parameters:
+            size (LongTensor): size of each sample
+        """
+        range = torch.arange(len(size), device=size.device)
+        index2sample = range.repeat_interleave(size)
+        return index2sample
+
     @torch.no_grad()
     def beam_search_distance(self, graphs, h_index, t_index, num_beam=10):
         num_node = graphs[0].num_node
@@ -244,7 +258,7 @@ class NeuralBellmanFordNetwork(nn.Module, core.Configurable):
             message = message[order].flatten()
             msg_source = msg_source[order].flatten(0, -2)
             size = scatter_add(torch.ones_like(node_out), node_out, dim_size=num_node)
-            msg2out = functional._size_to_index(size[node_out_set] * num_beam)
+            msg2out = self._size_to_index(size[node_out_set] * num_beam)
             # deduplicate
             is_duplicate = (msg_source[1:] == msg_source[:-1]).all(dim=-1)
             is_duplicate = torch.cat([torch.zeros(1, dtype=torch.bool, device=self.device), is_duplicate])
