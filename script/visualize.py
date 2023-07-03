@@ -33,7 +33,7 @@ def load_vocab(dataset):
     return entity_vocab, relation_vocab
 
 
-def visualize_path(solver, triplet, entity_vocab, relation_vocab):
+def visualize_path(solver, triplet, entity_vocab, relation_vocab, entity_index_to_name):
     num_relation = len(relation_vocab)
     h, t, r = triplet.tolist()
     triplet = torch.as_tensor([[h, t, r]], device=solver.device)
@@ -48,8 +48,8 @@ def visualize_path(solver, triplet, entity_vocab, relation_vocab):
     samples = (triplet, inverse)
     for sample, ranking in zip(samples, rankings):
         h, t, r = sample.squeeze(0).tolist()
-        h_name = f"{h} ({entity_vocab[h]})"
-        t_name = f"{t} ({entity_vocab[t]})"
+        h_name = f"{entity_index_to_name[h]} ({entity_vocab[h]})"
+        t_name = f"{entity_index_to_name[t]} ({entity_vocab[t]})"
         r_name = relation_vocab[r % num_relation]
         if r >= num_relation:
             r_name += "^(-1)"
@@ -60,8 +60,8 @@ def visualize_path(solver, triplet, entity_vocab, relation_vocab):
         for path, weight in zip(paths, weights):
             triplets = []
             for h, t, r in path:
-                h_name = entity_vocab[h]
-                t_name = entity_vocab[t]
+                h_name = f"{entity_index_to_name[h]} ({entity_vocab[h]})"
+                t_name = f"{entity_index_to_name[t]} ({entity_vocab[t]})"
                 r_name = relation_vocab[r % num_relation]
                 if r >= num_relation:
                     r_name += "^(-1)"
@@ -90,6 +90,7 @@ if __name__ == "__main__":
     solver = util.build_solver(cfg, dataset)
 
     entity_vocab, relation_vocab = load_vocab(dataset)
+    entity_index_to_name = dataset.entity_vocab
 
     for i in range(min(500, len(solver.test_set))):
-        visualize_path(solver, solver.test_set[i], entity_vocab, relation_vocab)
+        visualize_path(solver, solver.test_set[i], entity_vocab, relation_vocab, entity_index_to_name)
