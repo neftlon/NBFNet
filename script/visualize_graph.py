@@ -14,7 +14,6 @@ import torchdrug
 from torchdrug import core, data
 from torchdrug.utils import comm, plot
 
-
 sys.path.append(os.path.dirname(os.path.dirname(__file__)))
 from nbfnet import dataset, layer, model, task, util
 
@@ -29,6 +28,29 @@ def parse_args():
                         default=None)
 
     return parser.parse_known_args()[0]
+
+
+def solver_load(checkpoint, load_optimizer=True):
+    if comm.get_rank() == 0:
+        logger.warning("Load checkpoint from %s" % checkpoint)
+    checkpoint = os.path.expanduser(checkpoint)
+    state = torch.load(checkpoint, map_location=solver.device)
+    # some issues with loading back the fact_graph and graph
+    # remove
+    state["model"].pop("fact_graph")
+    state["model"].pop("graph")
+    state["model"].pop("undirected_fact_graph")
+    # load without
+    solver.model.load_state_dict(state["model"], strict=False)
+
+    if load_optimizer:
+        solver.optimizer.load_state_dict(state["optimizer"])
+        for state in solver.optimizer.state.values():
+            for k, v in state.items():
+                if isinstance(v, torch.Tensor):
+                    state[k] = v.to(solver.device)
+
+    comm.synchronize()
 
 
 def build_solver(cfg):
@@ -89,10 +111,10 @@ def visualize_echarts(graph, sample, paths, weights, entity_vocab, relation_voca
     edge_weight = defaultdict(float)
     for path, weight in zip(paths, weights):
         for h, t, r in path:
-            if (h,t,r) == (0,0,0):
+            if (h, t, r) == (0, 0, 0):
                 continue
             print(h, t, r, (h, t, r) in triplet2id)
-            #print("not if",h, r, t)
+            # print("not if",h, r, t)
             if r >= graph.num_relation:
                 r = r - graph.num_relation.item()
                 h, t = t, h
@@ -104,7 +126,7 @@ def visualize_echarts(graph, sample, paths, weights, entity_vocab, relation_voca
 
     graph = graph.edge_mask(edge_index)
     with graph.node():
-        graph.original_node = torch.arange(graph.num_node)
+        graph.original_node = torch.arange(graph.num_node, device=graph.device)
     graph = graph.compact()
     graph._edge_weight = torch.tensor(edge_weight, device=graph.device)
 
@@ -112,7 +134,8 @@ def visualize_echarts(graph, sample, paths, weights, entity_vocab, relation_voca
     node_colors = {}
     h, t, r = sample[0].tolist()
     if r >= graph.num_relation:
-        title = "p(%s | %s, %s^(-1))" % (entity_vocab[t], entity_vocab[h], relation_vocab[r - graph.num_relation.item()])
+        title = "p(%s | %s, %s^(-1))" % (
+        entity_vocab[t], entity_vocab[h], relation_vocab[r - graph.num_relation.item()])
     else:
         title = "p(%s | %s, %s)" % (entity_vocab[t], entity_vocab[h], relation_vocab[r])
     if ranking is not None:
@@ -128,14 +151,15 @@ def visualize_echarts(graph, sample, paths, weights, entity_vocab, relation_voca
                  dynamic_size=True, dynamic_width=True, save_file=save_file)
 
 
-#util.setup_debug_hook()
+# util.setup_debug_hook()
 torch.manual_seed(1024 + comm.get_rank())
 
 logger = logging.getLogger(__name__)
 
-
-vocab_file = os.path.join(os.path.dirname(__file__), "../data/PC_KEGG/PC_KEGG_CHEBI_entities.txt")
+# vocab_file = os.path.join(os.path.dirname(__file__), "../data/lnctard/entity_names.txt")
+vocab_file = os.path.join(os.path.dirname(__file__), "../data/mock/entity_names.txt")
 vocab_file = os.path.abspath(vocab_file)
+
 
 def load_vocab(dataset):
     entity_mapping = {}
@@ -149,37 +173,38 @@ def load_vocab(dataset):
 
     return entity_vocab, relation_vocab
 
+
 if __name__ == "__main__":
-#    args = parse_args()
-#    args.config = os.path.realpath(args.config)
-#    cfgs = util.load_config(args.config, context=vars)
-#
-#    output_dir = util.create_working_directory(cfg)
-#    if comm.get_rank() == 0:
-#        logger = util.get_root_logger()    
-#
-#    logger.warning("Config file: %s" % args.config)
-#
-#    start = args.start or 0
-#    end = args.end or len(cfg)
-#    if comm.get_rank() == 0:
-#        logger.warning("Config file: %s" % args.config)
-#        logger.warning("Hyperparameter grid size: %d" % len(cfg))
-#        logger.warning("Current job search range: [%d, %d)" % (start, end))
-#        shutil.copyfile(args.config, os.path.basename(args.config))
-#
-#    cfg = cfg[start: end]
-#    for job_id, cfg in enumerate(cfg):
-#    for job_id, cfg in enumerate(cfg):
-#    working_dir = output_dir
-#    if len(cfg) > 1:
-#        working_dir = os.path.join(working_dir, str(job_id))
-#    if comm.get_rank() == 0:
-#        #logger.warning("<<<<<<<<<< Job %d / %d start <<<<<<<<<<" % (job_id, len(cfg)))
-#        logger.warning(pprint.pformat(cfg))
-#        os.makedirs(working_dir, exist_ok=True)
-#    comm.synchronize()
-#    os.chdir(working_dir)
+    #    args = parse_args()
+    #    args.config = os.path.realpath(args.config)
+    #    cfgs = util.load_config(args.config, context=vars)
+    #
+    #    output_dir = util.create_working_directory(cfg)
+    #    if comm.get_rank() == 0:
+    #        logger = util.get_root_logger()
+    #
+    #    logger.warning("Config file: %s" % args.config)
+    #
+    #    start = args.start or 0
+    #    end = args.end or len(cfg)
+    #    if comm.get_rank() == 0:
+    #        logger.warning("Config file: %s" % args.config)
+    #        logger.warning("Hyperparameter grid size: %d" % len(cfg))
+    #        logger.warning("Current job search range: [%d, %d)" % (start, end))
+    #        shutil.copyfile(args.config, os.path.basename(args.config))
+    #
+    #    cfg = cfg[start: end]
+    #    for job_id, cfg in enumerate(cfg):
+    #    for job_id, cfg in enumerate(cfg):
+    #    working_dir = output_dir
+    #    if len(cfg) > 1:
+    #        working_dir = os.path.join(working_dir, str(job_id))
+    #    if comm.get_rank() == 0:
+    #        #logger.warning("<<<<<<<<<< Job %d / %d start <<<<<<<<<<" % (job_id, len(cfg)))
+    #        logger.warning(pprint.pformat(cfg))
+    #        os.makedirs(working_dir, exist_ok=True)
+    #    comm.synchronize()
+    #    os.chdir(working_dir)
 
     args, vars = util.parse_args()
     cfg = util.load_config(args.config, context=vars)
@@ -204,19 +229,19 @@ if __name__ == "__main__":
     solver = build_solver(cfg)
 
     if "checkpoint" in cfg:
-        solver.load(cfg.checkpoint)
-#        state = torch.load(os.path.expanduser(cfg.checkpoint), map_location=solver.device)
-#        state["model"].pop("fact_graph")
-#        state["model"].pop("degree_hr")
-#        state["model"].pop("degree_tr")
-#        solver.model.load_state_dict(state["model"], strict=False)
+        solver_load(cfg.checkpoint)
+    #        state = torch.load(os.path.expanduser(cfg.checkpoint), map_location=solver.device)
+    #        state["model"].pop("fact_graph")
+    #        state["model"].pop("degree_hr")
+    #        state["model"].pop("degree_tr")
+    #        solver.model.load_state_dict(state["model"], strict=False)
 
     if "FB15k237" in cfg.dataset["class"]:
         entity_vocab, relation_vocab = 0(_dataset)
     else:
         entity_vocab, relation_vocab = load_vocab(_dataset)
-#        entity_vocab = _dataset.entity_vocab
-#        relation_vocab = _dataset.relation_vocab
+    #        entity_vocab = _dataset.entity_vocab
+    #        relation_vocab = _dataset.relation_vocab
 
     task = solver.model
     task.eval()
@@ -231,24 +256,21 @@ if __name__ == "__main__":
         for j in range(solver.batch_size):
             sample = batch[[j]]
             h, t, r = sample.flatten().tolist()
-            
-
 
             entity = entity_vocab[h].replace(" ", "")
             relation = relation_vocab[r].replace(" ", "")
-           
-            
-#            entity = re.search(r"(.+) \(Q\d+\)", entity_vocab[h]).groups()[0]
-#            relation = re.search(r"(.+) \(\d+\)", relation_vocab[r]).groups()[0]
+
+            #            entity = re.search(r"(.+) \(Q\d+\)", entity_vocab[h]).groups()[0]
+            #            relation = re.search(r"(.+) \(\d+\)", relation_vocab[r]).groups()[0]
             save_file = "%s_%s.html" % (entity, relation)
             save_file = re.sub(r"[^\w().]+", "-", save_file)
             if ranking[j, 0] <= 10 and not os.path.exists(save_file):
                 paths, weights = task.visualize(sample)
                 if paths:
                     visualize_echarts(task.fact_graph, sample, paths, weights, entity_vocab, relation_vocab,
-                                          ranking[j, 0], save_file)
+                                      ranking[j, 0], save_file)
 
-#            entity = re.search(r"(.+) \(Q\d+\)", entity_vocab[t]).groups()[0]
+            #            entity = re.search(r"(.+) \(Q\d+\)", entity_vocab[t]).groups()[0]
             entity = entity_vocab[h].replace(" ", "")
             save_file = "%s_%s^(-1).html" % (entity, relation)
             save_file = re.sub(r"[^\w().]+", "-", save_file)
@@ -257,5 +279,5 @@ if __name__ == "__main__":
             if ranking[j, 1] <= 10 and not os.path.exists(save_file):
                 paths, weights = task.visualize(sample)
                 if paths:
-                        visualize_echarts(task.fact_graph, sample, paths, weights, entity_vocab, 
-                                          relation_vocab, ranking[j, 1], save_file)
+                    visualize_echarts(task.fact_graph, sample, paths, weights, entity_vocab,
+                                      relation_vocab, ranking[j, 1], save_file)
