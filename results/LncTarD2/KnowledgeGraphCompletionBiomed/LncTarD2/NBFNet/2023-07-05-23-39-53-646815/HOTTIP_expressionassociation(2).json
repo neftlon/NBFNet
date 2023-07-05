@@ -1,0 +1,209 @@
+{
+    "edges": [
+        {
+            "lineStyle": {
+                "width": 3.0669755935668945
+            },
+            "source": 3,
+            "target": 4,
+            "value": "expression association (2)"
+        },
+        {
+            "lineStyle": {
+                "width": 7.151377201080322
+            },
+            "source": 5,
+            "target": 2,
+            "value": "expression association (2)"
+        },
+        {
+            "lineStyle": {
+                "width": 2.028205633163452
+            },
+            "source": 8,
+            "target": 6,
+            "value": "expression association (2)"
+        },
+        {
+            "lineStyle": {
+                "width": 2.0429911613464355
+            },
+            "source": 6,
+            "target": 0,
+            "value": "interact with protein (1)"
+        },
+        {
+            "lineStyle": {
+                "width": 1.0225516557693481
+            },
+            "source": 10,
+            "target": 2,
+            "value": "expression association (2)"
+        },
+        {
+            "lineStyle": {
+                "width": 1.0168640613555908
+            },
+            "source": 11,
+            "target": 8,
+            "value": "ceRNA or sponge (3)"
+        },
+        {
+            "lineStyle": {
+                "width": 2.03578519821167
+            },
+            "source": 6,
+            "target": 2,
+            "value": "expression association (2)"
+        },
+        {
+            "lineStyle": {
+                "width": 3.045069694519043
+            },
+            "source": 4,
+            "target": 8,
+            "value": "ceRNA or sponge (3)"
+        },
+        {
+            "lineStyle": {
+                "width": 10.19999885559082
+            },
+            "source": 5,
+            "target": 7,
+            "value": "expression association (2)"
+        },
+        {
+            "lineStyle": {
+                "width": 2.0449628829956055
+            },
+            "source": 9,
+            "target": 4,
+            "value": "expression association (2)"
+        },
+        {
+            "lineStyle": {
+                "width": 1.0168640613555908
+            },
+            "source": 11,
+            "target": 2,
+            "value": "expression association (2)"
+        },
+        {
+            "lineStyle": {
+                "width": 2.0429911613464355
+            },
+            "source": 4,
+            "target": 0,
+            "value": "interact with protein (1)"
+        },
+        {
+            "lineStyle": {
+                "width": 2.0449628829956055
+            },
+            "source": 9,
+            "target": 10,
+            "value": "transcriptional regulation (4)"
+        },
+        {
+            "lineStyle": {
+                "width": 7.155183792114258
+            },
+            "source": 5,
+            "target": 3,
+            "value": "expression association (2)"
+        },
+        {
+            "lineStyle": {
+                "width": 2.0273890495300293
+            },
+            "source": 4,
+            "target": 1,
+            "value": "ceRNA or sponge (3)"
+        },
+        {
+            "lineStyle": {
+                "width": 1.0224112272262573
+            },
+            "source": 10,
+            "target": 2,
+            "value": "ceRNA or sponge (3)"
+        },
+        {
+            "lineStyle": {
+                "width": 2.0354115962982178
+            },
+            "source": 3,
+            "target": 6,
+            "value": "transcriptional regulation (4)"
+        }
+    ],
+    "nodes": [
+        {
+            "id": 0,
+            "name": "KDM1A",
+            "symbolSize": 9.54730224609375
+        },
+        {
+            "id": 1,
+            "name": "TGFBR1",
+            "symbolSize": 9.323405265808105
+        },
+        {
+            "id": 2,
+            "name": "BAX",
+            "symbolSize": 10.39934253692627
+        },
+        {
+            "id": 3,
+            "name": "FOXC1",
+            "symbolSize": 10.4002103805542
+        },
+        {
+            "id": 4,
+            "itemStyle": {
+                "color": "#ee6666"
+            },
+            "name": "HOTTIP",
+            "symbolSize": 10.397159576416016
+        },
+        {
+            "id": 5,
+            "name": "FOXCUT",
+            "symbolSize": 11.583114624023438
+        },
+        {
+            "id": 6,
+            "name": "HOTAIR",
+            "symbolSize": 9.977615356445312
+        },
+        {
+            "id": 7,
+            "itemStyle": {
+                "color": "#3ba272"
+            },
+            "name": "BCL2",
+            "symbolSize": 10.1906156539917
+        },
+        {
+            "id": 8,
+            "name": "ZEB1",
+            "symbolSize": 9.76167106628418
+        },
+        {
+            "id": 9,
+            "name": "SP1",
+            "symbolSize": 9.547727584838867
+        },
+        {
+            "id": 10,
+            "name": "MALAT1",
+            "symbolSize": 9.547727584838867
+        },
+        {
+            "id": 11,
+            "name": "SNHG5",
+            "symbolSize": 9.324100494384766
+        }
+    ],
+    "title": "p(BCL2 | HOTTIP, expression association (2))\nranking = 4"
+}

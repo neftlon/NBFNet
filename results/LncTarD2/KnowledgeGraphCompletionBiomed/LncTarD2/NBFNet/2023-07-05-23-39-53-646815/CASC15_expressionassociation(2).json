@@ -1,0 +1,209 @@
+{
+    "edges": [
+        {
+            "lineStyle": {
+                "width": 2.3656163215637207
+            },
+            "source": 6,
+            "target": 7,
+            "value": "epigenetic regulation (0)"
+        },
+        {
+            "lineStyle": {
+                "width": 4.899357795715332
+            },
+            "source": 6,
+            "target": 2,
+            "value": "expression association (2)"
+        },
+        {
+            "lineStyle": {
+                "width": 0.8374754190444946
+            },
+            "source": 8,
+            "target": 2,
+            "value": "expression association (2)"
+        },
+        {
+            "lineStyle": {
+                "width": 6.210310935974121
+            },
+            "source": 6,
+            "target": 3,
+            "value": "expression association (2)"
+        },
+        {
+            "lineStyle": {
+                "width": 0.8485043048858643
+            },
+            "source": 4,
+            "target": 3,
+            "value": "expression association (2)"
+        },
+        {
+            "lineStyle": {
+                "width": 0.8374754190444946
+            },
+            "source": 8,
+            "target": 3,
+            "value": "expression association (2)"
+        },
+        {
+            "lineStyle": {
+                "width": 0.8449060916900635
+            },
+            "source": 0,
+            "target": 2,
+            "value": "expression association (2)"
+        },
+        {
+            "lineStyle": {
+                "width": 0.8485043048858643
+            },
+            "source": 4,
+            "target": 10,
+            "value": "expression association (2)"
+        },
+        {
+            "lineStyle": {
+                "width": 0.8372443914413452
+            },
+            "source": 11,
+            "target": 3,
+            "value": "expression association (2)"
+        },
+        {
+            "lineStyle": {
+                "width": 16.154829025268555
+            },
+            "source": 6,
+            "target": 10,
+            "value": "expression association (2)"
+        },
+        {
+            "lineStyle": {
+                "width": 0.8449060916900635
+            },
+            "source": 0,
+            "target": 3,
+            "value": "expression association (2)"
+        },
+        {
+            "lineStyle": {
+                "width": 11.26350212097168
+            },
+            "source": 1,
+            "target": 10,
+            "value": "ceRNA or sponge (3)"
+        },
+        {
+            "lineStyle": {
+                "width": 0.8491181135177612
+            },
+            "source": 5,
+            "target": 3,
+            "value": "expression association (2)"
+        },
+        {
+            "lineStyle": {
+                "width": 0.8491181135177612
+            },
+            "source": 5,
+            "target": 2,
+            "value": "expression association (2)"
+        },
+        {
+            "lineStyle": {
+                "width": 0.8359428644180298
+            },
+            "source": 9,
+            "target": 3,
+            "value": "expression association (2)"
+        },
+        {
+            "lineStyle": {
+                "width": 0.8372443914413452
+            },
+            "source": 11,
+            "target": 10,
+            "value": "expression association (2)"
+        },
+        {
+            "lineStyle": {
+                "width": 0.8359428644180298
+            },
+            "source": 9,
+            "target": 10,
+            "value": "ceRNA or sponge (3)"
+        }
+    ],
+    "nodes": [
+        {
+            "id": 0,
+            "name": "BANCR",
+            "symbolSize": 9.506865501403809
+        },
+        {
+            "id": 1,
+            "itemStyle": {
+                "color": "#ee6666"
+            },
+            "name": "CASC15",
+            "symbolSize": 10.22265338897705
+        },
+        {
+            "id": 2,
+            "name": "CDH2",
+            "symbolSize": 9.940632820129395
+        },
+        {
+            "id": 3,
+            "itemStyle": {
+                "color": "#3ba272"
+            },
+            "name": "CDH1",
+            "symbolSize": 10.22265338897705
+        },
+        {
+            "id": 4,
+            "name": "HOXA11-AS",
+            "symbolSize": 9.507418632507324
+        },
+        {
+            "id": 5,
+            "name": "NEAT1",
+            "symbolSize": 9.507513046264648
+        },
+        {
+            "id": 6,
+            "name": "NMRAL2P",
+            "symbolSize": 11.498093605041504
+        },
+        {
+            "id": 7,
+            "name": "ACOT7",
+            "symbolSize": 9.558655738830566
+        },
+        {
+            "id": 8,
+            "name": "PCBP2-OT1",
+            "symbolSize": 9.505724906921387
+        },
+        {
+            "id": 9,
+            "name": "TP73-AS1",
+            "symbolSize": 9.505489349365234
+        },
+        {
+            "id": 10,
+            "name": "TWIST1",
+            "symbolSize": 11.51861572265625
+        },
+        {
+            "id": 11,
+            "name": "UNC5B-AS1",
+            "symbolSize": 9.50568962097168
+        }
+    ],
+    "title": "p(CDH1 | CASC15, expression association (2))\nranking = 7"
+}
