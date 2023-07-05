@@ -1,0 +1,138 @@
+{
+    "edges": [
+        {
+            "lineStyle": {
+                "width": 1.3049664497375488
+            },
+            "source": 0,
+            "target": 1,
+            "value": "down (1)"
+        },
+        {
+            "lineStyle": {
+                "width": 1.3178719282150269
+            },
+            "source": 1,
+            "target": 2,
+            "value": "up (0)"
+        },
+        {
+            "lineStyle": {
+                "width": 6.076696872711182
+            },
+            "source": 1,
+            "target": 2,
+            "value": "phos (2)"
+        },
+        {
+            "lineStyle": {
+                "width": 2.9984934329986572
+            },
+            "source": 2,
+            "target": 1,
+            "value": "down (1)"
+        },
+        {
+            "lineStyle": {
+                "width": 1.3430927991867065
+            },
+            "source": 3,
+            "target": 1,
+            "value": "GO:annotation (3)"
+        },
+        {
+            "lineStyle": {
+                "width": 1.3059706687927246
+            },
+            "source": 4,
+            "target": 1,
+            "value": "GO:annotation (3)"
+        },
+        {
+            "lineStyle": {
+                "width": 1.3125600814819336
+            },
+            "source": 5,
+            "target": 1,
+            "value": "GO:annotation (3)"
+        },
+        {
+            "lineStyle": {
+                "width": 11.712020874023438
+            },
+            "source": 6,
+            "target": 1,
+            "value": "GO:annotation (3)"
+        },
+        {
+            "lineStyle": {
+                "width": 1.3156216144561768
+            },
+            "source": 7,
+            "target": 1,
+            "value": "GO:annotation (3)"
+        },
+        {
+            "lineStyle": {
+                "width": 1.3127048015594482
+            },
+            "source": 8,
+            "target": 1,
+            "value": "GO:annotation (3)"
+        }
+    ],
+    "nodes": [
+        {
+            "id": 0,
+            "name": "gene1",
+            "symbolSize": 9.759425163269043
+        },
+        {
+            "id": 1,
+            "name": "gene3",
+            "symbolSize": 11.031340599060059
+        },
+        {
+            "id": 2,
+            "itemStyle": {
+                "color": "#3ba272"
+            },
+            "name": "gene4",
+            "symbolSize": 10.17490291595459
+        },
+        {
+            "id": 3,
+            "name": "pathway1",
+            "symbolSize": 9.76119327545166
+        },
+        {
+            "id": 4,
+            "name": "pathway6",
+            "symbolSize": 9.759471893310547
+        },
+        {
+            "id": 5,
+            "name": "pathway11",
+            "symbolSize": 9.759777069091797
+        },
+        {
+            "id": 6,
+            "itemStyle": {
+                "color": "#ee6666"
+            },
+            "name": "pathway13",
+            "symbolSize": 10.234189987182617
+        },
+        {
+            "id": 7,
+            "name": "pathway16",
+            "symbolSize": 9.759918212890625
+        },
+        {
+            "id": 8,
+            "name": "pathway17",
+            "symbolSize": 9.759782791137695
+        }
+    ],
+    "title": "p(gene4 | pathway13, GO:annotation (3))\nranking = 1"
+}
