@@ -1,4 +1,4 @@
-output_dir: results/LncTarD2
+output_dir: results/LncTarD2-homo
 
 dataset:
   class: LncTarD2
@@ -22,7 +22,7 @@ task:
   strict_negative: yes
   adversarial_temperature: 0.5
   sample_weight: no
-  heterogeneous_negative: yes
+  heterogeneous_negative: no
   heterogeneous_evaluation: yes
   conditional_probability: yes
   full_batch_eval: False
