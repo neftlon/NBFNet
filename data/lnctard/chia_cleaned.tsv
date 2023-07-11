@@ -1,0 +1,15 @@
+head	relation	tail
+FALEC	affects	SETDB1
+SNHG12	affects	MED18
+FALEC	affects	VPS45
+LINC00336	affects	HMGA1
+TRERNA1	affects	STAU1
+ZFAS1	affects	STAU1
+ZFAS1	affects	SNAI1
+NEAT1	affects	SYVN1
+MALAT1	affects	RAB1B
+MALAT1	affects	RELA
+TRERNA1	affects	ZNFX1
+MALAT1	affects	FOSL1
+FALEC	affects	MCL1
+FAM83H-AS1	affects	CYC1
