@@ -1,0 +1,177 @@
+{
+    "edges": [
+        {
+            "lineStyle": {
+                "width": 1.4537266492843628
+            },
+            "source": 1,
+            "target": 2,
+            "value": "expression association (2)"
+        },
+        {
+            "lineStyle": {
+                "width": 1.0282162427902222
+            },
+            "source": 3,
+            "target": 0,
+            "value": "expression association (2)"
+        },
+        {
+            "lineStyle": {
+                "width": 9.946949005126953
+            },
+            "source": 3,
+            "target": 4,
+            "value": "expression association (2)"
+        },
+        {
+            "lineStyle": {
+                "width": 0.7355576157569885
+            },
+            "source": 8,
+            "target": 6,
+            "value": "expression association (2)"
+        },
+        {
+            "lineStyle": {
+                "width": 1.022493600845337
+            },
+            "source": 3,
+            "target": 9,
+            "value": "expression association (2)"
+        },
+        {
+            "lineStyle": {
+                "width": 2.1848301887512207
+            },
+            "source": 8,
+            "target": 2,
+            "value": "expression association (2)"
+        },
+        {
+            "lineStyle": {
+                "width": 7.521461486816406
+            },
+            "source": 3,
+            "target": 2,
+            "value": "expression association (2)"
+        },
+        {
+            "lineStyle": {
+                "width": 0.749242901802063
+            },
+            "source": 11,
+            "target": 7,
+            "value": "ceRNA or sponge (3)"
+        },
+        {
+            "lineStyle": {
+                "width": 0.7355576157569885
+            },
+            "source": 11,
+            "target": 6,
+            "value": "expression association (2)"
+        },
+        {
+            "lineStyle": {
+                "width": 3.909921169281006
+            },
+            "source": 11,
+            "target": 4,
+            "value": "ceRNA or sponge (3)"
+        },
+        {
+            "lineStyle": {
+                "width": 0.749242901802063
+            },
+            "source": 10,
+            "target": 7,
+            "value": "interact with mRNA (6)"
+        },
+        {
+            "lineStyle": {
+                "width": 1.455023169517517
+            },
+            "source": 5,
+            "target": 2,
+            "value": "expression association (2)"
+        },
+        {
+            "lineStyle": {
+                "width": 7.50777530670166
+            },
+            "source": 10,
+            "target": 4,
+            "value": "expression association (2)"
+        }
+    ],
+    "nodes": [
+        {
+            "id": 0,
+            "name": "AKT1",
+            "symbolSize": 8.973721504211426
+        },
+        {
+            "id": 1,
+            "name": "DBH-AS1",
+            "symbolSize": 9.06234359741211
+        },
+        {
+            "id": 2,
+            "itemStyle": {
+                "color": "#ee6666"
+            },
+            "name": "p-PI3K",
+            "symbolSize": 11.189266204833984
+        },
+        {
+            "id": 3,
+            "name": "ENST",
+            "symbolSize": 12.345569610595703
+        },
+        {
+            "id": 4,
+            "name": "p-AKT",
+            "symbolSize": 12.637535095214844
+        },
+        {
+            "id": 5,
+            "name": "FER1L4",
+            "symbolSize": 9.062612533569336
+        },
+        {
+            "id": 6,
+            "name": "BCL2",
+            "symbolSize": 9.065951347351074
+        },
+        {
+            "id": 7,
+            "name": "VEGFA",
+            "symbolSize": 9.071630477905273
+        },
+        {
+            "id": 8,
+            "name": "LINC00628",
+            "symbolSize": 9.363128662109375
+        },
+        {
+            "id": 9,
+            "name": "PIK3CA",
+            "symbolSize": 8.972525596618652
+        },
+        {
+            "id": 10,
+            "itemStyle": {
+                "color": "#3ba272"
+            },
+            "name": "MALAT1",
+            "symbolSize": 10.400838851928711
+        },
+        {
+            "id": 11,
+            "name": "SNHG16",
+            "symbolSize": 9.854881286621094
+        }
+    ],
+    "title": "p(MALAT1 | p-PI3K, expression association (2)^(-1))\nranking = 1"
+}

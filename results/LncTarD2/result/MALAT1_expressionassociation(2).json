@@ -1,0 +1,272 @@
+{
+    "edges": [
+        {
+            "lineStyle": {
+                "width": 0.9386439323425293
+            },
+            "source": 3,
+            "target": 4,
+            "value": "expression association (2)"
+        },
+        {
+            "lineStyle": {
+                "width": 0.9386439323425293
+            },
+            "source": 3,
+            "target": 5,
+            "value": "expression association (2)"
+        },
+        {
+            "lineStyle": {
+                "width": 6.254302978515625
+            },
+            "source": 7,
+            "target": 1,
+            "value": "expression association (2)"
+        },
+        {
+            "lineStyle": {
+                "width": 5.037437915802002
+            },
+            "source": 7,
+            "target": 8,
+            "value": "expression association (2)"
+        },
+        {
+            "lineStyle": {
+                "width": 2.5548574924468994
+            },
+            "source": 10,
+            "target": 9,
+            "value": "expression association (2)"
+        },
+        {
+            "lineStyle": {
+                "width": 1.7063716650009155
+            },
+            "source": 7,
+            "target": 11,
+            "value": "expression association (2)"
+        },
+        {
+            "lineStyle": {
+                "width": 1.706436038017273
+            },
+            "source": 12,
+            "target": 9,
+            "value": "ceRNA or sponge (3)"
+        },
+        {
+            "lineStyle": {
+                "width": 1.6162136793136597
+            },
+            "source": 10,
+            "target": 5,
+            "value": "expression association (2)"
+        },
+        {
+            "lineStyle": {
+                "width": 1.7063716650009155
+            },
+            "source": 6,
+            "target": 11,
+            "value": "ceRNA or sponge (3)"
+        },
+        {
+            "lineStyle": {
+                "width": 1.7063716650009155
+            },
+            "source": 6,
+            "target": 9,
+            "value": "ceRNA or sponge (3)"
+        },
+        {
+            "lineStyle": {
+                "width": 12.998111724853516
+            },
+            "source": 7,
+            "target": 5,
+            "value": "expression association (2)"
+        },
+        {
+            "lineStyle": {
+                "width": 1.7042241096496582
+            },
+            "source": 0,
+            "target": 1,
+            "value": "expression association (2)"
+        },
+        {
+            "lineStyle": {
+                "width": 1.7063393592834473
+            },
+            "source": 14,
+            "target": 9,
+            "value": "expression association (2)"
+        },
+        {
+            "lineStyle": {
+                "width": 1.7043261528015137
+            },
+            "source": 13,
+            "target": 1,
+            "value": "interact with protein (1)"
+        },
+        {
+            "lineStyle": {
+                "width": 1.7042052745819092
+            },
+            "source": 2,
+            "target": 9,
+            "value": "expression association (2)"
+        },
+        {
+            "lineStyle": {
+                "width": 0.9386439323425293
+            },
+            "source": 10,
+            "target": 4,
+            "value": "expression association (2)"
+        },
+        {
+            "lineStyle": {
+                "width": 1.7063393592834473
+            },
+            "source": 14,
+            "target": 8,
+            "value": "ceRNA or sponge (3)"
+        },
+        {
+            "lineStyle": {
+                "width": 1.1415470838546753
+            },
+            "source": 12,
+            "target": 1,
+            "value": "ceRNA or sponge (3)"
+        },
+        {
+            "lineStyle": {
+                "width": 1.7042052745819092
+            },
+            "source": 2,
+            "target": 1,
+            "value": "expression association (2)"
+        },
+        {
+            "lineStyle": {
+                "width": 12.786761283874512
+            },
+            "source": 12,
+            "target": 9,
+            "value": "expression association (2)"
+        },
+        {
+            "lineStyle": {
+                "width": 1.7043261528015137
+            },
+            "source": 13,
+            "target": 9,
+            "value": "expression association (2)"
+        },
+        {
+            "lineStyle": {
+                "width": 1.7042241096496582
+            },
+            "source": 0,
+            "target": 9,
+            "value": "expression association (2)"
+        },
+        {
+            "lineStyle": {
+                "width": 3.3310985565185547
+            },
+            "source": 12,
+            "target": 8,
+            "value": "expression association (2)"
+        }
+    ],
+    "nodes": [
+        {
+            "id": 0,
+            "name": "H19",
+            "symbolSize": 9.289445877075195
+        },
+        {
+            "id": 1,
+            "name": "AKT1",
+            "symbolSize": 10.450477600097656
+        },
+        {
+            "id": 2,
+            "name": "CASC2",
+            "symbolSize": 9.28944206237793
+        },
+        {
+            "id": 3,
+            "name": "DBH-AS1",
+            "symbolSize": 9.083251953125
+        },
+        {
+            "id": 4,
+            "name": "p-Akt",
+            "symbolSize": 9.083251953125
+        },
+        {
+            "id": 5,
+            "itemStyle": {
+                "color": "#3ba272"
+            },
+            "name": "p-PI3K",
+            "symbolSize": 10.816396713256836
+        },
+        {
+            "id": 6,
+            "name": "XIST",
+            "symbolSize": 9.290019989013672
+        },
+        {
+            "id": 7,
+            "name": "ENST",
+            "symbolSize": 11.997275352478027
+        },
+        {
+            "id": 8,
+            "name": "p-AKT",
+            "symbolSize": 10.150195121765137
+        },
+        {
+            "id": 9,
+            "name": "BCL2",
+            "symbolSize": 11.951543807983398
+        },
+        {
+            "id": 10,
+            "name": "LINC00628",
+            "symbolSize": 9.514699935913086
+        },
+        {
+            "id": 11,
+            "name": "PIK3CA",
+            "symbolSize": 9.290019989013672
+        },
+        {
+            "id": 12,
+            "itemStyle": {
+                "color": "#ee6666"
+            },
+            "name": "MALAT1",
+            "symbolSize": 11.214483261108398
+        },
+        {
+            "id": 13,
+            "name": "METTL3",
+            "symbolSize": 9.289474487304688
+        },
+        {
+            "id": 14,
+            "name": "SNHG16",
+            "symbolSize": 9.290011405944824
+        }
+    ],
+    "title": "p(p-PI3K | MALAT1, expression association (2))\nranking = 10"
+}
