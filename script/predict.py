@@ -14,7 +14,8 @@ sys.path.append(os.path.dirname(os.path.dirname(__file__)))
 from nbfnet import dataset, layer, model, task, util  # , reasoning_mod
 import numpy as np
 
-vocab_file = os.path.join(os.path.dirname(__file__), "../data/mock/entity_names.txt")
+# vocab_file = os.path.join(os.path.dirname(__file__), "../data/mock/entity_names.txt")
+vocab_file = os.path.join(os.path.dirname(__file__), "../data/lnctard/entity_names.txt")
 vocab_file = os.path.abspath(vocab_file)
 
 
