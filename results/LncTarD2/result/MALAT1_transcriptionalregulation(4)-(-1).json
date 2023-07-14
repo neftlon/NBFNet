@@ -1,0 +1,127 @@
+{
+    "edges": [
+        {
+            "lineStyle": {
+                "width": 14.792252540588379
+            },
+            "source": 0,
+            "target": 1,
+            "value": "epigenetic regulation (0)"
+        },
+        {
+            "lineStyle": {
+                "width": 0.37816083431243896
+            },
+            "source": 2,
+            "target": 3,
+            "value": "ceRNA or sponge (3)"
+        },
+        {
+            "lineStyle": {
+                "width": 1.4693663120269775
+            },
+            "source": 2,
+            "target": 4,
+            "value": "ceRNA or sponge (3)"
+        },
+        {
+            "lineStyle": {
+                "width": 3.5715160369873047
+            },
+            "source": 2,
+            "target": 5,
+            "value": "ceRNA or sponge (3)"
+        },
+        {
+            "lineStyle": {
+                "width": 0.35415512323379517
+            },
+            "source": 2,
+            "target": 6,
+            "value": "expression association (2)"
+        },
+        {
+            "lineStyle": {
+                "width": 2.6517910957336426
+            },
+            "source": 2,
+            "target": 7,
+            "value": "transcriptional regulation (4)"
+        },
+        {
+            "lineStyle": {
+                "width": 0.3577321767807007
+            },
+            "source": 2,
+            "target": 8,
+            "value": "transcriptional regulation (4)"
+        },
+        {
+            "lineStyle": {
+                "width": 0.42502561211586
+            },
+            "source": 2,
+            "target": 9,
+            "value": "transcriptional regulation (4)"
+        }
+    ],
+    "nodes": [
+        {
+            "id": 0,
+            "name": "91H",
+            "symbolSize": 10.372042655944824
+        },
+        {
+            "id": 1,
+            "name": "H19",
+            "symbolSize": 10.372042655944824
+        },
+        {
+            "id": 2,
+            "itemStyle": {
+                "color": "#3ba272"
+            },
+            "name": "MALAT1",
+            "symbolSize": 10.166177749633789
+        },
+        {
+            "id": 3,
+            "name": "CTLA4",
+            "symbolSize": 9.834455490112305
+        },
+        {
+            "id": 4,
+            "name": "NEDD9",
+            "symbolSize": 9.875874519348145
+        },
+        {
+            "id": 5,
+            "itemStyle": {
+                "color": "#ee6666"
+            },
+            "name": "miR-127-5p",
+            "symbolSize": 9.955327987670898
+        },
+        {
+            "id": 6,
+            "name": "FHL1",
+            "symbolSize": 9.833542823791504
+        },
+        {
+            "id": 7,
+            "name": "ABI3BP",
+            "symbolSize": 9.92061996459961
+        },
+        {
+            "id": 8,
+            "name": "CD36",
+            "symbolSize": 9.833680152893066
+        },
+        {
+            "id": 9,
+            "name": "DHT",
+            "symbolSize": 9.836236953735352
+        }
+    ],
+    "title": "p(MALAT1 | miR-127-5p, transcriptional regulation (4)^(-1))\nranking = 1"
+}

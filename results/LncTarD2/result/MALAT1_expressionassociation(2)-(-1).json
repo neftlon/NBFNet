@@ -2,7 +2,7 @@
     "edges": [
         {
             "lineStyle": {
-                "width": 1.4537266492843628
+                "width": 1.4537267684936523
             },
             "source": 1,
             "target": 2,
@@ -10,7 +10,7 @@
         },
         {
             "lineStyle": {
-                "width": 1.0282162427902222
+                "width": 1.0282161235809326
             },
             "source": 3,
             "target": 0,
@@ -26,7 +26,7 @@
         },
         {
             "lineStyle": {
-                "width": 0.7355576157569885
+                "width": 0.7355575561523438
             },
             "source": 8,
             "target": 6,
@@ -66,7 +66,7 @@
         },
         {
             "lineStyle": {
-                "width": 0.7355576157569885
+                "width": 0.7355575561523438
             },
             "source": 11,
             "target": 6,
@@ -98,7 +98,7 @@
         },
         {
             "lineStyle": {
-                "width": 7.50777530670166
+                "width": 7.507776260375977
             },
             "source": 10,
             "target": 4,
@@ -147,7 +147,7 @@
         {
             "id": 7,
             "name": "VEGFA",
-            "symbolSize": 9.071630477905273
+            "symbolSize": 9.07162857055664
         },
         {
             "id": 8,
@@ -165,12 +165,12 @@
                 "color": "#3ba272"
             },
             "name": "MALAT1",
-            "symbolSize": 10.400838851928711
+            "symbolSize": 10.400837898254395
         },
         {
             "id": 11,
             "name": "SNHG16",
-            "symbolSize": 9.854881286621094
+            "symbolSize": 9.854879379272461
         }
     ],
     "title": "p(MALAT1 | p-PI3K, expression association (2)^(-1))\nranking = 1"
