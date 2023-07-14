@@ -1,0 +1,778 @@
+query_node	query_relation	prediction_node	probability	is_novel
+MALAT1	transcriptional regulation	H19	0.5734720230102539	True
+MALAT1	transcriptional regulation	CASP3	0.697354257106781	True
+MALAT1	transcriptional regulation	AKT1	0.6138114929199219	True
+MALAT1	transcriptional regulation	SOX4	0.5285652875900269	True
+MALAT1	transcriptional regulation	TIMP2	0.5087603330612183	True
+MALAT1	transcriptional regulation	AR	0.5837990641593933	True
+MALAT1	transcriptional regulation	SMAD3	0.6533909440040588	True
+MALAT1	transcriptional regulation	EZH2	0.6886119842529297	True
+MALAT1	transcriptional regulation	RAP1B	0.5944597721099854	True
+MALAT1	transcriptional regulation	VIM	0.6019337177276611	True
+MALAT1	transcriptional regulation	AKT3	0.5645586848258972	True
+MALAT1	transcriptional regulation	LATS2	0.5513940453529358	True
+MALAT1	transcriptional regulation	TLR4	0.5828121900558472	True
+MALAT1	transcriptional regulation	MDM2	0.6910131573677063	True
+MALAT1	transcriptional regulation	FOXA1	0.515723466873169	True
+MALAT1	transcriptional regulation	ET-1	0.613530695438385	True
+MALAT1	transcriptional regulation	CTNNB1	0.7286680340766907	True
+MALAT1	transcriptional regulation	ELAVL1	0.5892254114151001	True
+MALAT1	transcriptional regulation	CDKN1A	0.7197933793067932	True
+MALAT1	transcriptional regulation	MAPK3	0.6576432585716248	True
+MALAT1	transcriptional regulation	YAP1	0.591683030128479	True
+MALAT1	transcriptional regulation	CDKN1C	0.5444075465202332	True
+MALAT1	transcriptional regulation	FOXO1	0.5444027185440063	True
+MALAT1	transcriptional regulation	SMAD4	0.6112043261528015	True
+MALAT1	transcriptional regulation	RUNX2	0.5759114623069763	True
+MALAT1	transcriptional regulation	PTEN	0.6708758473396301	True
+MALAT1	transcriptional regulation	YY1AP1	0.5913899540901184	True
+MALAT1	transcriptional regulation	IGF1R	0.6142182946205139	True
+MALAT1	transcriptional regulation	MAPK14	0.5246696472167969	True
+MALAT1	transcriptional regulation	BCL2L1	0.5139950513839722	True
+MALAT1	transcriptional regulation	BLACAT1	0.5237443447113037	True
+MALAT1	transcriptional regulation	SOCS3	0.6189354658126831	True
+MALAT1	transcriptional regulation	SIRT1	0.5735673904418945	True
+MALAT1	transcriptional regulation	IL6	0.7103874087333679	True
+MALAT1	transcriptional regulation	FTX	0.5269527435302734	True
+MALAT1	transcriptional regulation	KLF5	0.6020650267601013	True
+MALAT1	transcriptional regulation	miR-144-3p	0.5225169658660889	True
+MALAT1	transcriptional regulation	ZEB2	0.6090409755706787	True
+MALAT1	transcriptional regulation	miR-101	0.5933940410614014	True
+MALAT1	transcriptional regulation	TJP1	0.5899782180786133	True
+MALAT1	transcriptional regulation	FOXM1	0.5275087952613831	True
+MALAT1	transcriptional regulation	CCAT1	0.5306985378265381	True
+MALAT1	transcriptional regulation	miR-216b	0.5949931740760803	True
+MALAT1	transcriptional regulation	miR-145	0.5711425542831421	True
+MALAT1	transcriptional regulation	MMP9	0.595546543598175	True
+MALAT1	transcriptional regulation	CCND1	0.6094351410865784	True
+MALAT1	transcriptional regulation	CDKN2B-AS1	0.5210415720939636	True
+MALAT1	transcriptional regulation	MAP3K3	0.5790101289749146	True
+MALAT1	transcriptional regulation	miR-181a-5p	0.5689908862113953	True
+MALAT1	transcriptional regulation	N-cadherin	0.5232420563697815	True
+MALAT1	transcriptional regulation	PARP1	0.604673445224762	True
+MALAT1	transcriptional regulation	PI3K	0.622282087802887	True
+MALAT1	transcriptional regulation	vimentin	0.6525667309761047	True
+MALAT1	transcriptional regulation	CDK6	0.6401854753494263	True
+MALAT1	transcriptional regulation	ABCA1	0.6264708042144775	True
+MALAT1	transcriptional regulation	CDH1	0.6851304173469543	True
+MALAT1	transcriptional regulation	CREB1	0.583347499370575	True
+MALAT1	transcriptional regulation	TCF7L2	0.5321578979492188	True
+MALAT1	transcriptional regulation	miR-497	0.593602180480957	True
+MALAT1	transcriptional regulation	NFKB1	0.6306792497634888	True
+MALAT1	transcriptional regulation	BAX	0.671389639377594	True
+MALAT1	transcriptional regulation	DANCR	0.5174382328987122	True
+MALAT1	transcriptional regulation	JAG1	0.5945132970809937	True
+MALAT1	transcriptional regulation	SNAI1	0.6185355186462402	True
+MALAT1	transcriptional regulation	DNMT1	0.5178607106208801	True
+MALAT1	transcriptional regulation	EGFR	0.6163131594657898	True
+MALAT1	transcriptional regulation	E2F1	0.6705151200294495	True
+MALAT1	transcriptional regulation	E7	0.5364283919334412	True
+MALAT1	transcriptional regulation	MMP13	0.5996017456054688	True
+MALAT1	transcriptional regulation	XIST	0.5192383527755737	True
+MALAT1	transcriptional regulation	p-AKT	0.531729519367218	True
+MALAT1	transcriptional regulation	SOX2	0.5618736147880554	True
+MALAT1	transcriptional regulation	PTK2	0.5532962679862976	True
+MALAT1	transcriptional regulation	FAS	0.5420229434967041	True
+MALAT1	transcriptional regulation	miR-203a-3p	0.5925188660621643	True
+MALAT1	transcriptional regulation	MYC	0.6878116130828857	True
+MALAT1	transcriptional regulation	HOTTIP	0.5020678639411926	True
+MALAT1	transcriptional regulation	MMP2	0.750688374042511	True
+MALAT1	transcriptional regulation	POU5F1	0.607131838798523	True
+MALAT1	transcriptional regulation	GAS5	0.5262703895568848	True
+MALAT1	transcriptional regulation	miR-124	0.5905742645263672	True
+MALAT1	transcriptional regulation	miR-34a	0.5234704613685608	True
+MALAT1	transcriptional regulation	miR-429	0.6123868823051453	True
+MALAT1	transcriptional regulation	IGF2BP1	0.5568474531173706	True
+MALAT1	transcriptional regulation	GSK3B	0.613277018070221	True
+MALAT1	transcriptional regulation	POSTN	0.612833559513092	True
+MALAT1	transcriptional regulation	PPP1R13L	0.5693808794021606	True
+MALAT1	transcriptional regulation	ROCK2	0.5707449316978455	True
+MALAT1	transcriptional regulation	SATB2	0.612833559513092	True
+MALAT1	transcriptional regulation	miR-194-5p	0.5942010283470154	True
+MALAT1	transcriptional regulation	miR-140	0.5399246215820312	True
+MALAT1	transcriptional regulation	miR-140-5p	0.577799379825592	True
+MALAT1	transcriptional regulation	ATG12	0.5764428377151489	True
+MALAT1	transcriptional regulation	HIF1A	0.7495107054710388	True
+MALAT1	transcriptional regulation	ATG5	0.5845575928688049	True
+MALAT1	transcriptional regulation	HOTAIR	0.5478602051734924	True
+MALAT1	transcriptional regulation	CDC6	0.5756513476371765	True
+MALAT1	transcriptional regulation	EIF4E	0.6360823512077332	True
+MALAT1	transcriptional regulation	PCDH10	0.5166214108467102	True
+MALAT1	transcriptional regulation	miR-205	0.6246408224105835	True
+MALAT1	transcriptional regulation	miR-206	0.591001033782959	True
+MALAT1	transcriptional regulation	ITGA4	0.7308655381202698	True
+MALAT1	transcriptional regulation	TGFBR2	0.561305046081543	True
+MALAT1	transcriptional regulation	miR-155	0.528570294380188	True
+MALAT1	transcriptional regulation	HMGA2	0.5716654062271118	True
+MALAT1	transcriptional regulation	HULC	0.5002484321594238	True
+MALAT1	transcriptional regulation	ITGB1	0.5977094173431396	True
+MALAT1	transcriptional regulation	PTBP3	0.5189619660377502	True
+MALAT1	transcriptional regulation	BCL2	0.6710390448570251	True
+MALAT1	transcriptional regulation	CDKN2B	0.5246484875679016	True
+MALAT1	transcriptional regulation	TP53	0.6915045380592346	True
+MALAT1	transcriptional regulation	NLRP3	0.5921945571899414	True
+MALAT1	transcriptional regulation	KRAS	0.5820167064666748	True
+MALAT1	transcriptional regulation	UCA1	0.5119245052337646	True
+MALAT1	transcriptional regulation	Cyclin D1	0.6944590210914612	True
+MALAT1	transcriptional regulation	LIN28A	0.6264306306838989	True
+MALAT1	transcriptional regulation	CDKN1B	0.5981581211090088	True
+MALAT1	transcriptional regulation	ZEB1	0.6744142174720764	True
+MALAT1	transcriptional regulation	AKAP12	0.5809482336044312	True
+MALAT1	transcriptional regulation	AGR2	0.5206302404403687	True
+MALAT1	transcriptional regulation	miR-126-5p	0.6142542362213135	True
+MALAT1	transcriptional regulation	HMGB1	0.6150944828987122	True
+MALAT1	transcriptional regulation	VEGFA	0.7632354497909546	True
+MALAT1	transcriptional regulation	FOXP2	0.5937479734420776	True
+MALAT1	transcriptional regulation	CXCR4	0.5836703777313232	True
+MALAT1	transcriptional regulation	LINC00958	0.509426474571228	True
+MALAT1	transcriptional regulation	SP1	0.6024361848831177	True
+MALAT1	transcriptional regulation	MYBL2	0.5278571844100952	True
+MALAT1	transcriptional regulation	PIK3CA	0.5053684115409851	True
+MALAT1	transcriptional regulation	PKM	0.51832515001297	True
+MALAT1	transcriptional regulation	KLF2	0.6365740895271301	True
+MALAT1	transcriptional regulation	AXL	0.5288521647453308	True
+MALAT1	transcriptional regulation	ROCK1	0.5005070567131042	True
+MALAT1	transcriptional regulation	STAT3	0.6552459597587585	True
+MALAT1	transcriptional regulation	SOCS1	0.5833125710487366	True
+MALAT1	transcriptional regulation	MALAT1	0.5852481722831726	True
+MALAT1	transcriptional regulation	ACVR2B	0.6488651633262634	True
+MALAT1	transcriptional regulation	ATF4	0.6488651633262634	True
+MALAT1	transcriptional regulation	BMPR2	0.6488651633262634	True
+MALAT1	transcriptional regulation	BRWD1	0.6488651633262634	True
+MALAT1	transcriptional regulation	CAPNS1	0.6488651633262634	True
+MALAT1	transcriptional regulation	CCL21	0.6488651633262634	True
+MALAT1	transcriptional regulation	CNR1	0.6488651633262634	True
+MALAT1	transcriptional regulation	COMMD8	0.5921022891998291	True
+MALAT1	transcriptional regulation	CORO1C	0.6488651633262634	True
+MALAT1	transcriptional regulation	CTLA4	0.6488651633262634	True
+MALAT1	transcriptional regulation	CXCR2	0.6488651633262634	True
+MALAT1	transcriptional regulation	FBXW8	0.6488651633262634	True
+MALAT1	transcriptional regulation	FOXQ1	0.5941886305809021	True
+MALAT1	transcriptional regulation	GOLM1	0.6138749718666077	True
+MALAT1	transcriptional regulation	GPNMB	0.6488651633262634	True
+MALAT1	transcriptional regulation	HIF3A	0.6488651633262634	True
+MALAT1	transcriptional regulation	HOXC4	0.6488651633262634	True
+MALAT1	transcriptional regulation	IL-21R	0.6488651633262634	True
+MALAT1	transcriptional regulation	MAGEA9	0.6488651633262634	True
+MALAT1	transcriptional regulation	MAT2A	0.6488651633262634	True
+MALAT1	transcriptional regulation	MEF2A	0.6488651633262634	True
+MALAT1	transcriptional regulation	MIR202	0.6488651633262634	True
+MALAT1	transcriptional regulation	MSL2	0.6488651633262634	True
+MALAT1	transcriptional regulation	NEDD9	0.6488651633262634	True
+MALAT1	transcriptional regulation	NR3C2	0.6488651633262634	True
+MALAT1	transcriptional regulation	OAS2	0.6488651633262634	True
+MALAT1	transcriptional regulation	OAS3	0.6488651633262634	True
+MALAT1	transcriptional regulation	OASL	0.6488651633262634	True
+MALAT1	transcriptional regulation	PIK3R1	0.6128950119018555	True
+MALAT1	transcriptional regulation	PNPO	0.6488651633262634	True
+MALAT1	transcriptional regulation	RAB5A	0.6488651633262634	True
+MALAT1	transcriptional regulation	RBG2	0.6488651633262634	True
+MALAT1	transcriptional regulation	RET	0.6488651633262634	True
+MALAT1	transcriptional regulation	SLAIN2	0.6488651633262634	True
+MALAT1	transcriptional regulation	SMAD1	0.6488651633262634	True
+MALAT1	transcriptional regulation	SOX13	0.6488651633262634	True
+MALAT1	transcriptional regulation	SP7	0.6488651633262634	True
+MALAT1	transcriptional regulation	TGFA	0.6138749718666077	True
+MALAT1	transcriptional regulation	TMX2-CTNND1	0.6488651633262634	True
+MALAT1	transcriptional regulation	TRAF6	0.6108208298683167	True
+MALAT1	transcriptional regulation	TYMS	0.6131898760795593	True
+MALAT1	transcriptional regulation	VEGE-C	0.6488651633262634	True
+MALAT1	transcriptional regulation	ZBTB4	0.6488651633262634	True
+MALAT1	transcriptional regulation	miR-125b-5p	0.6488651633262634	True
+MALAT1	transcriptional regulation	miR-127-5p	0.6488651633262634	True
+MALAT1	transcriptional regulation	miR-142-3p	0.6302553415298462	True
+MALAT1	transcriptional regulation	miR-199b	0.6488651633262634	True
+MALAT1	transcriptional regulation	miR-200s	0.6488651633262634	True
+MALAT1	transcriptional regulation	miR-20b-5p	0.6488651633262634	True
+MALAT1	transcriptional regulation	miR-375	0.6125762462615967	True
+MALAT1	transcriptional regulation	miR-503-5p	0.6488651633262634	True
+MALAT1	transcriptional regulation	miR-96	0.610846221446991	True
+MALAT1	transcriptional regulation	miR-29b	0.5291265845298767	True
+MALAT1	transcriptional regulation	MEG3	0.5568370819091797	True
+MALAT1	transcriptional regulation	ADAMTS5	0.5943171977996826	True
+MALAT1	transcriptional regulation	MTOR	0.6168872714042664	True
+MALAT1	transcriptional regulation	NEAT1	0.5589610934257507	True
+MALAT1	transcriptional regulation	ABCA3	0.6128950119018555	True
+MALAT1	transcriptional regulation	NOTCH1	0.7064895033836365	True
+MALAT1	transcriptional regulation	c-Met	0.5782280564308167	True
+MALAT1	transcriptional regulation	HES1	0.5147312879562378	True
+MALAT1	transcriptional regulation	PCNA	0.5561278462409973	True
+MALAT1	transcriptional regulation	CDKN2A	0.5294308662414551	True
+MALAT1	transcriptional regulation	ATG7	0.5466605424880981	True
+MALAT1	transcriptional regulation	PVT1	0.52168869972229	True
+MALAT1	transcriptional regulation	miR-29a	0.5313757061958313	True
+MALAT1	transcriptional regulation	CDK4	0.6210353970527649	True
+MALAT1	transcriptional regulation	MAPK1	0.6116449236869812	True
+MALAT1	transcriptional regulation	E-cadherin	0.7340654730796814	True
+MALAT1	transcriptional regulation	SNHG1	0.5009586811065674	True
+MALAT1	transcriptional regulation	SNHG16	0.515961229801178	True
+MALAT1	transcriptional regulation	SOX9	0.5925500392913818	True
+MALAT1	transcriptional regulation	SRSF1	0.5309337377548218	True
+MALAT1	transcriptional regulation	CCL5	0.5856609344482422	True
+MALAT1	transcriptional regulation	TGFB1	0.6964912414550781	True
+MALAT1	transcriptional regulation	TUG1	0.5329108834266663	True
+MALAT1	transcriptional regulation	TINCR	0.5007615089416504	True
+MALAT1	transcriptional regulation	TNF	0.6956131458282471	True
+MALAT1	transcriptional regulation	TWIST1	0.604668140411377	True
+MALAT1	transcriptional regulation	LATS1	0.6294467449188232	True
+MALAT1	transcriptional regulation	EPCAM	0.5357506275177002	True
+MALAT1	transcriptional regulation	NANOG	0.6213842630386353	True
+MALAT1	transcriptional regulation	RAC1	0.6283606886863708	True
+MALAT1	transcriptional regulation	RHOA	0.598869800567627	True
+MALAT1	transcriptional regulation	miR-129-5p	0.6351106762886047	True
+MALAT1	transcriptional regulation	miR-21	0.5213485360145569	True
+MALAT1	ceRNA or sponge	AKT1	0.6182949542999268	False
+MALAT1	ceRNA or sponge	SOX4	0.6980071067810059	False
+MALAT1	ceRNA or sponge	TIMP2	0.5237181782722473	True
+MALAT1	ceRNA or sponge	AR	0.5594698190689087	False
+MALAT1	ceRNA or sponge	BCL2L11	0.5558138489723206	True
+MALAT1	ceRNA or sponge	SMAD3	0.6257016658782959	True
+MALAT1	ceRNA or sponge	EZH2	0.5328338146209717	False
+MALAT1	ceRNA or sponge	E2F3	0.5863924026489258	True
+MALAT1	ceRNA or sponge	RAP1B	0.5820611119270325	False
+MALAT1	ceRNA or sponge	miR-195	0.5987033843994141	True
+MALAT1	ceRNA or sponge	VIM	0.5938602089881897	False
+MALAT1	ceRNA or sponge	ERBB2	0.5299681425094604	True
+MALAT1	ceRNA or sponge	AKT3	0.6481029987335205	False
+MALAT1	ceRNA or sponge	TLR4	0.5942962765693665	False
+MALAT1	ceRNA or sponge	MDM2	0.5901113748550415	True
+MALAT1	ceRNA or sponge	TGFBR1	0.5736256241798401	False
+MALAT1	ceRNA or sponge	ABCC1	0.5096203684806824	True
+MALAT1	ceRNA or sponge	ET-1	0.5111071467399597	False
+MALAT1	ceRNA or sponge	ELAVL1	0.5992985367774963	False
+MALAT1	ceRNA or sponge	ETS1	0.5195652842521667	True
+MALAT1	ceRNA or sponge	YAP1	0.5885891318321228	True
+MALAT1	ceRNA or sponge	miR-126	0.5438745617866516	True
+MALAT1	ceRNA or sponge	FOXO1	0.5257701277732849	True
+MALAT1	ceRNA or sponge	SMAD4	0.5694112181663513	False
+MALAT1	ceRNA or sponge	RUNX2	0.6324084997177124	False
+MALAT1	ceRNA or sponge	PTEN	0.647250235080719	True
+MALAT1	ceRNA or sponge	IGF1R	0.6329485177993774	True
+MALAT1	ceRNA or sponge	BCL2L1	0.5066004395484924	True
+MALAT1	ceRNA or sponge	CDC42	0.5342152118682861	True
+MALAT1	ceRNA or sponge	ABCB1	0.5754932165145874	False
+MALAT1	ceRNA or sponge	miR-424	0.5279292464256287	True
+MALAT1	ceRNA or sponge	SOCS3	0.5397997498512268	False
+MALAT1	ceRNA or sponge	SIRT1	0.6877294182777405	False
+MALAT1	ceRNA or sponge	IL6	0.5903028845787048	True
+MALAT1	ceRNA or sponge	CDK1	0.6047442555427551	True
+MALAT1	ceRNA or sponge	KLF5	0.5516554117202759	False
+MALAT1	ceRNA or sponge	miR-144-3p	0.5567463636398315	True
+MALAT1	ceRNA or sponge	ZEB2	0.6740096211433411	False
+MALAT1	ceRNA or sponge	miR-101	0.5803830623626709	False
+MALAT1	ceRNA or sponge	PDCD4	0.52736896276474	True
+MALAT1	ceRNA or sponge	TJP1	0.5274550914764404	True
+MALAT1	ceRNA or sponge	FOXM1	0.6122279763221741	True
+MALAT1	ceRNA or sponge	FSCN1	0.5322430729866028	True
+MALAT1	ceRNA or sponge	WNT1	0.5503571033477783	True
+MALAT1	ceRNA or sponge	miR-152	0.5008476972579956	True
+MALAT1	ceRNA or sponge	miR-216b	0.5830602645874023	False
+MALAT1	ceRNA or sponge	miR-145	0.5534464716911316	False
+MALAT1	ceRNA or sponge	MMP9	0.5918900370597839	True
+MALAT1	ceRNA or sponge	CCND1	0.6667308807373047	False
+MALAT1	ceRNA or sponge	MAP3K3	0.606511652469635	False
+MALAT1	ceRNA or sponge	miR-181a-5p	0.6349166035652161	False
+MALAT1	ceRNA or sponge	MET	0.544441819190979	True
+MALAT1	ceRNA or sponge	PARP1	0.5014974474906921	True
+MALAT1	ceRNA or sponge	CCNE1	0.5093538165092468	True
+MALAT1	ceRNA or sponge	CDK6	0.6716244220733643	True
+MALAT1	ceRNA or sponge	FGFR1	0.5615960359573364	True
+MALAT1	ceRNA or sponge	ABCA1	0.5366213917732239	False
+MALAT1	ceRNA or sponge	SMAD7	0.5007258057594299	True
+MALAT1	ceRNA or sponge	CREB1	0.5756650567054749	False
+MALAT1	ceRNA or sponge	XIAP	0.5331993103027344	True
+MALAT1	ceRNA or sponge	BMI1	0.5172059535980225	True
+MALAT1	ceRNA or sponge	miR-107	0.5012675523757935	True
+MALAT1	ceRNA or sponge	miR-497	0.583290696144104	False
+MALAT1	ceRNA or sponge	NFKB1	0.5187128782272339	False
+MALAT1	ceRNA or sponge	BAX	0.5905821323394775	False
+MALAT1	ceRNA or sponge	JAG1	0.5854491591453552	False
+MALAT1	ceRNA or sponge	SNAI1	0.5991818308830261	False
+MALAT1	ceRNA or sponge	E2F7	0.5568236708641052	True
+MALAT1	ceRNA or sponge	HK2	0.5057806372642517	True
+MALAT1	ceRNA or sponge	DNMT1	0.5452287197113037	True
+MALAT1	ceRNA or sponge	EGFR	0.6124434471130371	False
+MALAT1	ceRNA or sponge	MMP13	0.5571346282958984	False
+MALAT1	ceRNA or sponge	p-AKT	0.5127744674682617	True
+MALAT1	ceRNA or sponge	MEF2D	0.5003276467323303	True
+MALAT1	ceRNA or sponge	SOX2	0.5622812509536743	True
+MALAT1	ceRNA or sponge	PTK2	0.5355504751205444	True
+MALAT1	ceRNA or sponge	MMP14	0.5849016308784485	False
+MALAT1	ceRNA or sponge	miR-203a-3p	0.5781088471412659	False
+MALAT1	ceRNA or sponge	SOCS5	0.5553786754608154	True
+MALAT1	ceRNA or sponge	NOB1	0.524665892124176	True
+MALAT1	ceRNA or sponge	MYC	0.5895102620124817	True
+MALAT1	ceRNA or sponge	E2F2	0.5898744463920593	True
+MALAT1	ceRNA or sponge	MMP2	0.6236420273780823	True
+MALAT1	ceRNA or sponge	FOXP1	0.5054214000701904	True
+MALAT1	ceRNA or sponge	MTDH	0.5621545314788818	True
+MALAT1	ceRNA or sponge	CCND2	0.6213009357452393	False
+MALAT1	ceRNA or sponge	POU5F1	0.5327810049057007	False
+MALAT1	ceRNA or sponge	miR-124	0.5911881923675537	False
+MALAT1	ceRNA or sponge	miR-34a	0.5437318086624146	True
+MALAT1	ceRNA or sponge	miR-429	0.5135255455970764	False
+MALAT1	ceRNA or sponge	IGF2BP1	0.5267288684844971	False
+MALAT1	ceRNA or sponge	GSK3B	0.5831583142280579	True
+MALAT1	ceRNA or sponge	POSTN	0.5405365824699402	False
+MALAT1	ceRNA or sponge	PPP1R13L	0.6392897963523865	False
+MALAT1	ceRNA or sponge	ROCK2	0.6306188702583313	False
+MALAT1	ceRNA or sponge	SATB2	0.5405365824699402	False
+MALAT1	ceRNA or sponge	YWHAZ	0.5347393751144409	True
+MALAT1	ceRNA or sponge	miR-194-5p	0.5857653617858887	False
+MALAT1	ceRNA or sponge	miR-140	0.5175475478172302	True
+MALAT1	ceRNA or sponge	miR-140-5p	0.61353999376297	False
+MALAT1	ceRNA or sponge	ATG12	0.5475279092788696	False
+MALAT1	ceRNA or sponge	HIF1A	0.6212177872657776	True
+MALAT1	ceRNA or sponge	ATG5	0.6071586012840271	False
+MALAT1	ceRNA or sponge	HOTAIR	0.5051856637001038	True
+MALAT1	ceRNA or sponge	miR-613	0.5823484063148499	True
+MALAT1	ceRNA or sponge	miR-206	0.5743980407714844	False
+MALAT1	ceRNA or sponge	TGFBR2	0.6481064558029175	False
+MALAT1	ceRNA or sponge	miR-155	0.5125788450241089	True
+MALAT1	ceRNA or sponge	HMGA2	0.6880130171775818	False
+MALAT1	ceRNA or sponge	ITGB1	0.5483645796775818	False
+MALAT1	ceRNA or sponge	PTBP3	0.514458417892456	True
+MALAT1	ceRNA or sponge	BCL2	0.655632495880127	False
+MALAT1	ceRNA or sponge	TP53	0.5127496719360352	True
+MALAT1	ceRNA or sponge	NLRP3	0.5764422416687012	False
+MALAT1	ceRNA or sponge	KRAS	0.5913058519363403	False
+MALAT1	ceRNA or sponge	Cyclin D1	0.5942869186401367	True
+MALAT1	ceRNA or sponge	IRS1	0.5028160810470581	True
+MALAT1	ceRNA or sponge	ZEB1	0.689166784286499	False
+MALAT1	ceRNA or sponge	AKAP12	0.6066374182701111	False
+MALAT1	ceRNA or sponge	ANXA2	0.5414369106292725	False
+MALAT1	ceRNA or sponge	HDGF	0.585594117641449	True
+MALAT1	ceRNA or sponge	JAK2	0.5250445008277893	True
+MALAT1	ceRNA or sponge	AGR2	0.5491873025894165	True
+MALAT1	ceRNA or sponge	miR-126-5p	0.5365786552429199	False
+MALAT1	ceRNA or sponge	HMGB1	0.6867970824241638	False
+MALAT1	ceRNA or sponge	VEGFA	0.5771166086196899	False
+MALAT1	ceRNA or sponge	FOXP2	0.5890962481498718	False
+MALAT1	ceRNA or sponge	IL22	0.5010188817977905	True
+MALAT1	ceRNA or sponge	CDK14	0.5994454026222229	True
+MALAT1	ceRNA or sponge	CXCR4	0.6586406230926514	False
+MALAT1	ceRNA or sponge	ATF1	0.5279965400695801	True
+MALAT1	ceRNA or sponge	MYBL2	0.5594332218170166	True
+MALAT1	ceRNA or sponge	PIK3CA	0.5670656561851501	False
+MALAT1	ceRNA or sponge	SMAD5	0.5088320970535278	True
+MALAT1	ceRNA or sponge	AXL	0.5620892643928528	True
+MALAT1	ceRNA or sponge	CD274	0.5525880455970764	True
+MALAT1	ceRNA or sponge	ROCK1	0.6064997911453247	False
+MALAT1	ceRNA or sponge	STAT3	0.6300138831138611	False
+MALAT1	ceRNA or sponge	SMAD2	0.5893179774284363	True
+MALAT1	ceRNA or sponge	SOCS1	0.5431974530220032	False
+MALAT1	ceRNA or sponge	COMMD8	0.5845000743865967	False
+MALAT1	ceRNA or sponge	FOXQ1	0.5863121151924133	False
+MALAT1	ceRNA or sponge	GOLM1	0.5363747477531433	False
+MALAT1	ceRNA or sponge	PIK3R1	0.5365648865699768	False
+MALAT1	ceRNA or sponge	TGFA	0.5363747477531433	False
+MALAT1	ceRNA or sponge	TRAF6	0.5414640307426453	False
+MALAT1	ceRNA or sponge	TYMS	0.5111681222915649	False
+MALAT1	ceRNA or sponge	miR-375	0.5324189066886902	False
+MALAT1	ceRNA or sponge	miR-96	0.5083303451538086	False
+MALAT1	ceRNA or sponge	NOTCH2	0.5224863886833191	True
+MALAT1	ceRNA or sponge	KLF4	0.5221565961837769	True
+MALAT1	ceRNA or sponge	ADAMTS5	0.5829461812973022	False
+MALAT1	ceRNA or sponge	MTOR	0.5730658769607544	False
+MALAT1	ceRNA or sponge	MCL1	0.5224943161010742	False
+MALAT1	ceRNA or sponge	BCL9	0.5243079662322998	True
+MALAT1	ceRNA or sponge	ABCA3	0.5365648865699768	False
+MALAT1	ceRNA or sponge	NOTCH1	0.6112323999404907	True
+MALAT1	ceRNA or sponge	c-Met	0.6116579174995422	False
+MALAT1	ceRNA or sponge	MIR15A	0.5467831492424011	True
+MALAT1	ceRNA or sponge	ATG7	0.5566086173057556	True
+MALAT1	ceRNA or sponge	CDK4	0.5400384068489075	False
+MALAT1	ceRNA or sponge	MAPK1	0.6562857627868652	False
+MALAT1	ceRNA or sponge	E-cadherin	0.5333645939826965	True
+MALAT1	ceRNA or sponge	SOX9	0.6602911353111267	False
+MALAT1	ceRNA or sponge	YY1	0.534692645072937	True
+MALAT1	ceRNA or sponge	CCL5	0.5299608111381531	True
+MALAT1	ceRNA or sponge	TGFB1	0.5228168368339539	True
+MALAT1	ceRNA or sponge	DDX5	0.5025740265846252	True
+MALAT1	ceRNA or sponge	TNF	0.6040030121803284	True
+MALAT1	ceRNA or sponge	HMGA1	0.5990168452262878	True
+MALAT1	ceRNA or sponge	TWIST1	0.6269678473472595	True
+MALAT1	ceRNA or sponge	EPCAM	0.5232111215591431	True
+MALAT1	ceRNA or sponge	NANOG	0.5297073721885681	True
+MALAT1	ceRNA or sponge	RAC1	0.5639695525169373	False
+MALAT1	ceRNA or sponge	RHOA	0.5496879816055298	False
+MALAT1	ceRNA or sponge	miR-129-5p	0.5490493178367615	False
+MALAT1	ceRNA or sponge	miR-141	0.5029119253158569	True
+MALAT1	ceRNA or sponge	miR-21	0.5232940316200256	True
+MALAT1	ceRNA or sponge	miR-26a	0.5003163814544678	True
+MALAT1	expression association	CASP3	0.7901999950408936	False
+MALAT1	expression association	CASP9	0.5824500918388367	True
+MALAT1	expression association	AKT1	0.7418895363807678	False
+MALAT1	expression association	SOX4	0.5042101144790649	True
+MALAT1	expression association	AR	0.5581312775611877	True
+MALAT1	expression association	SMAD3	0.5630477070808411	False
+MALAT1	expression association	EZH2	0.6354125142097473	False
+MALAT1	expression association	VIM	0.7219218611717224	False
+MALAT1	expression association	AKT3	0.5183218717575073	True
+MALAT1	expression association	LATS2	0.5106882452964783	True
+MALAT1	expression association	TLR4	0.5996073484420776	True
+MALAT1	expression association	MDM2	0.6644407510757446	False
+MALAT1	expression association	ABCC1	0.5314672589302063	True
+MALAT1	expression association	FOXA1	0.5013654828071594	True
+MALAT1	expression association	ET-1	0.5516943335533142	True
+MALAT1	expression association	CTNNB1	0.7796441912651062	False
+MALAT1	expression association	ELAVL1	0.5717278122901917	True
+MALAT1	expression association	CDKN1A	0.7991169095039368	False
+MALAT1	expression association	MAPK3	0.6781704425811768	False
+MALAT1	expression association	YAP1	0.6476792097091675	False
+MALAT1	expression association	SMAD4	0.5667834281921387	True
+MALAT1	expression association	RUNX2	0.5855527520179749	True
+MALAT1	expression association	PTEN	0.5961381196975708	True
+MALAT1	expression association	YY1AP1	0.5740903615951538	True
+MALAT1	expression association	IGF1R	0.5616961717605591	False
+MALAT1	expression association	MAPK14	0.6388812065124512	False
+MALAT1	expression association	Caspase3	0.6930264234542847	False
+MALAT1	expression association	ABCB1	0.5075520277023315	True
+MALAT1	expression association	SIRT1	0.6556199789047241	False
+MALAT1	expression association	IL6	0.73052579164505	False
+MALAT1	expression association	KLF5	0.5119144320487976	True
+MALAT1	expression association	ZEB2	0.5669533014297485	False
+MALAT1	expression association	TJP1	0.5458199381828308	False
+MALAT1	expression association	WNT1	0.5375009179115295	True
+MALAT1	expression association	miR-145	0.5207400918006897	False
+MALAT1	expression association	MMP9	0.653541624546051	False
+MALAT1	expression association	CCND1	0.7270467281341553	True
+MALAT1	expression association	CDH2	0.6350346207618713	False
+MALAT1	expression association	MAP3K3	0.5062388181686401	True
+MALAT1	expression association	MMP3	0.5260292291641235	True
+MALAT1	expression association	N-cadherin	0.6801837086677551	True
+MALAT1	expression association	PARP1	0.6717396378517151	False
+MALAT1	expression association	PI3K	0.7452672719955444	False
+MALAT1	expression association	vimentin	0.7869777083396912	False
+MALAT1	expression association	CCNE1	0.6208646297454834	True
+MALAT1	expression association	CDK6	0.5388814210891724	False
+MALAT1	expression association	IL-1¦Â	0.5767974257469177	True
+MALAT1	expression association	ABCA1	0.5995684862136841	False
+MALAT1	expression association	CDH1	0.7829854488372803	False
+MALAT1	expression association	CREB1	0.5447657704353333	True
+MALAT1	expression association	TCF7L2	0.521672785282135	True
+MALAT1	expression association	NFKB1	0.5983695983886719	False
+MALAT1	expression association	BAX	0.7868492603302002	False
+MALAT1	expression association	p-PI3K	0.549790620803833	True
+MALAT1	expression association	SNAI1	0.6472723484039307	True
+MALAT1	expression association	Caspase9	0.5563844442367554	True
+MALAT1	expression association	EGFR	0.6331977844238281	True
+MALAT1	expression association	E2F1	0.6413373351097107	True
+MALAT1	expression association	MMP13	0.6152588725090027	False
+MALAT1	expression association	CDC25C	0.5171445608139038	True
+MALAT1	expression association	p-AKT	0.5457625389099121	False
+MALAT1	expression association	SOX2	0.5956184267997742	False
+MALAT1	expression association	PTK2	0.5212750434875488	False
+MALAT1	expression association	FAS	0.6383756399154663	False
+MALAT1	expression association	MYC	0.6627913117408752	True
+MALAT1	expression association	MMP2	0.7634370923042297	False
+MALAT1	expression association	DCTN6	0.5064072012901306	False
+MALAT1	expression association	CD44	0.5105300545692444	True
+MALAT1	expression association	POU5F1	0.629418134689331	False
+MALAT1	expression association	miR-124	0.5766608715057373	False
+MALAT1	expression association	miR-429	0.5415875315666199	True
+MALAT1	expression association	IGF2BP1	0.512946605682373	True
+MALAT1	expression association	GSK3B	0.652000367641449	False
+MALAT1	expression association	ROCK2	0.513979434967041	True
+MALAT1	expression association	miR-140	0.5030450224876404	False
+MALAT1	expression association	miR-140-5p	0.5583797693252563	True
+MALAT1	expression association	HIF1A	0.6675875782966614	False
+MALAT1	expression association	ATG5	0.5703832507133484	True
+MALAT1	expression association	miR-205	0.5389407277107239	True
+MALAT1	expression association	miR-206	0.5718326568603516	True
+MALAT1	expression association	TGFBR2	0.5125696659088135	True
+MALAT1	expression association	miR-155	0.5194305181503296	False
+MALAT1	expression association	HMGA2	0.5755524635314941	True
+MALAT1	expression association	ITGB1	0.5348955988883972	True
+MALAT1	expression association	PROM1	0.5909003615379333	True
+MALAT1	expression association	BCL2	0.7666017413139343	False
+MALAT1	expression association	TP53	0.7199397087097168	True
+MALAT1	expression association	NLRP3	0.5781450867652893	True
+MALAT1	expression association	KRAS	0.5547874569892883	True
+MALAT1	expression association	Cyclin D1	0.6669347286224365	False
+MALAT1	expression association	IRS1	0.5192449688911438	True
+MALAT1	expression association	CDKN1B	0.7090252637863159	True
+MALAT1	expression association	ZEB1	0.659127950668335	False
+MALAT1	expression association	AKAP12	0.5045074224472046	True
+MALAT1	expression association	HMGB1	0.5767426490783691	False
+MALAT1	expression association	VEGFA	0.6331785321235657	True
+MALAT1	expression association	FOXP2	0.503110408782959	True
+MALAT1	expression association	CXCR4	0.5594988465309143	True
+MALAT1	expression association	SP1	0.5598668456077576	True
+MALAT1	expression association	PIK3CA	0.5578136444091797	True
+MALAT1	expression association	KLF2	0.5676335096359253	True
+MALAT1	expression association	ROCK1	0.5472807288169861	True
+MALAT1	expression association	NRF2	0.5464529395103455	True
+MALAT1	expression association	STAT3	0.6576908826828003	False
+MALAT1	expression association	SMAD2	0.5209468007087708	True
+MALAT1	expression association	SOCS1	0.5161235928535461	True
+MALAT1	expression association	MALAT1	0.6183724403381348	True
+MALAT1	expression association	TRAF6	0.525535523891449	True
+MALAT1	expression association	TYMS	0.551638662815094	True
+MALAT1	expression association	miR-96	0.5107046365737915	True
+MALAT1	expression association	miR-29b	0.5243003964424133	True
+MALAT1	expression association	AURKB	0.5410159230232239	False
+MALAT1	expression association	Clecaspase-3	0.509562611579895	False
+MALAT1	expression association	Clecaspase-9	0.509562611579895	False
+MALAT1	expression association	MTOR	0.6781603693962097	False
+MALAT1	expression association	NOTCH1	0.5851982831954956	False
+MALAT1	expression association	c-Met	0.5140683650970459	True
+MALAT1	expression association	HES1	0.5313768982887268	True
+MALAT1	expression association	PCNA	0.550945520401001	False
+MALAT1	expression association	RB1	0.5409037470817566	True
+MALAT1	expression association	miR-29a	0.5385400056838989	True
+MALAT1	expression association	CDK4	0.7317196130752563	True
+MALAT1	expression association	MAPK1	0.6774489879608154	False
+MALAT1	expression association	E-cadherin	0.7231607437133789	False
+MALAT1	expression association	SOX9	0.5607646703720093	True
+MALAT1	expression association	SRSF1	0.5476101636886597	False
+MALAT1	expression association	Cyclin D	0.5880671739578247	True
+MALAT1	expression association	CCL5	0.5609350800514221	False
+MALAT1	expression association	TGFB1	0.637967586517334	True
+MALAT1	expression association	TNF	0.6945008635520935	False
+MALAT1	expression association	TWIST1	0.540886402130127	True
+MALAT1	expression association	LATS1	0.6197968125343323	False
+MALAT1	expression association	NANOG	0.6620312929153442	False
+MALAT1	expression association	RAC1	0.5802232027053833	True
+MALAT1	expression association	RHOA	0.588286280632019	False
+MALAT1	expression association	IL1B	0.5970974564552307	True
+MALAT1	expression association	miR-101-3p	0.5376065373420715	True
+MALAT1	expression association	miR-129-5p	0.5352780818939209	False
+MALAT1	expression association	miR-21	0.5688669085502625	True
+MALAT1	interact with mRNA	H19	0.5791374444961548	True
+MALAT1	interact with mRNA	CASP3	0.5461353063583374	True
+MALAT1	interact with mRNA	AKT1	0.5229775905609131	True
+MALAT1	interact with mRNA	SOX4	0.5039375424385071	True
+MALAT1	interact with mRNA	SMAD3	0.5375672578811646	True
+MALAT1	interact with mRNA	EZH2	0.5605919361114502	True
+MALAT1	interact with mRNA	MDM2	0.5571423768997192	True
+MALAT1	interact with mRNA	CTNNB1	0.611634373664856	True
+MALAT1	interact with mRNA	CDKN1A	0.6331613659858704	True
+MALAT1	interact with mRNA	MAPK3	0.531431257724762	True
+MALAT1	interact with mRNA	YAP1	0.5275546908378601	True
+MALAT1	interact with mRNA	PTEN	0.584149956703186	True
+MALAT1	interact with mRNA	IGF1R	0.5387353897094727	True
+MALAT1	interact with mRNA	MAPK14	0.5013193488121033	True
+MALAT1	interact with mRNA	IL6	0.5707879662513733	True
+MALAT1	interact with mRNA	ZEB2	0.5246043801307678	True
+MALAT1	interact with mRNA	TJP1	0.5102980732917786	True
+MALAT1	interact with mRNA	CCAT1	0.5360962748527527	True
+MALAT1	interact with mRNA	miR-145	0.5003402233123779	True
+MALAT1	interact with mRNA	MMP9	0.5182448029518127	True
+MALAT1	interact with mRNA	CCND1	0.5366381406784058	True
+MALAT1	interact with mRNA	PARP1	0.5341141819953918	True
+MALAT1	interact with mRNA	PI3K	0.5265194177627563	True
+MALAT1	interact with mRNA	vimentin	0.5392804741859436	True
+MALAT1	interact with mRNA	CDK6	0.5045402646064758	True
+MALAT1	interact with mRNA	CDH1	0.5925416350364685	True
+MALAT1	interact with mRNA	NFKB1	0.5192205309867859	True
+MALAT1	interact with mRNA	BAX	0.5403969883918762	True
+MALAT1	interact with mRNA	DANCR	0.5065955519676208	True
+MALAT1	interact with mRNA	SNAI1	0.5206920504570007	True
+MALAT1	interact with mRNA	EGFR	0.5079593658447266	True
+MALAT1	interact with mRNA	E2F1	0.532183825969696	True
+MALAT1	interact with mRNA	XIST	0.551108717918396	True
+MALAT1	interact with mRNA	PTK2	0.5038056969642639	True
+MALAT1	interact with mRNA	MYC	0.5744438171386719	True
+MALAT1	interact with mRNA	MMP2	0.5782433748245239	True
+MALAT1	interact with mRNA	GAS5	0.5179213285446167	True
+MALAT1	interact with mRNA	GSK3B	0.5287845730781555	True
+MALAT1	interact with mRNA	HIF1A	0.58758944272995	True
+MALAT1	interact with mRNA	HOTAIR	0.5687567591667175	True
+MALAT1	interact with mRNA	BCL2	0.5714273452758789	True
+MALAT1	interact with mRNA	TP53	0.5917262434959412	True
+MALAT1	interact with mRNA	UCA1	0.5281252861022949	True
+MALAT1	interact with mRNA	Cyclin D1	0.562776505947113	True
+MALAT1	interact with mRNA	SNHG14	0.5097410678863525	True
+MALAT1	interact with mRNA	CDKN1B	0.5549691319465637	True
+MALAT1	interact with mRNA	ZEB1	0.575680673122406	True
+MALAT1	interact with mRNA	HMGB1	0.5223166346549988	True
+MALAT1	interact with mRNA	VEGFA	0.5768216848373413	False
+MALAT1	interact with mRNA	SP1	0.500688910484314	True
+MALAT1	interact with mRNA	KLF2	0.5158671140670776	True
+MALAT1	interact with mRNA	STAT3	0.5657667517662048	True
+MALAT1	interact with mRNA	MALAT1	0.7256617546081543	True
+MALAT1	interact with mRNA	MEG3	0.5324975848197937	True
+MALAT1	interact with mRNA	MTOR	0.5028811693191528	True
+MALAT1	interact with mRNA	NEAT1	0.5880106687545776	True
+MALAT1	interact with mRNA	NOTCH1	0.57441246509552	True
+MALAT1	interact with mRNA	OIP5-AS1	0.516778826713562	True
+MALAT1	interact with mRNA	PVT1	0.5281549096107483	True
+MALAT1	interact with mRNA	miR-29a	0.5061964988708496	True
+MALAT1	interact with mRNA	MAPK1	0.5206219553947449	True
+MALAT1	interact with mRNA	E-cadherin	0.5816275477409363	True
+MALAT1	interact with mRNA	SNHG1	0.505703866481781	True
+MALAT1	interact with mRNA	SNHG16	0.5278452038764954	True
+MALAT1	interact with mRNA	CCL5	0.5047071576118469	True
+MALAT1	interact with mRNA	TGFB1	0.5691922903060913	False
+MALAT1	interact with mRNA	TUG1	0.5304021239280701	True
+MALAT1	interact with mRNA	TNF	0.5615350604057312	True
+MALAT1	interact with mRNA	TWIST1	0.5152128338813782	True
+MALAT1	interact with mRNA	LATS1	0.5217514634132385	True
+MALAT1	interact with mRNA	ZFAS1	0.5050758719444275	True
+MALAT1	interact with mRNA	NANOG	0.5291650891304016	True
+MALAT1	interact with mRNA	miR-129-5p	0.542178213596344	True
+MALAT1	interact with mRNA	miR-21	0.5054721832275391	True
+MALAT1	interact with protein	H19	0.5239542722702026	True
+MALAT1	interact with protein	CASP3	0.5484380722045898	True
+MALAT1	interact with protein	AKT1	0.5695915818214417	True
+MALAT1	interact with protein	SOX4	0.5724430680274963	True
+MALAT1	interact with protein	AR	0.546622633934021	True
+MALAT1	interact with protein	SMAD3	0.5996912121772766	True
+MALAT1	interact with protein	EZH2	0.8105307817459106	False
+MALAT1	interact with protein	LATS2	0.5152607560157776	True
+MALAT1	interact with protein	KDM1A	0.7290443778038025	True
+MALAT1	interact with protein	MDM2	0.6489235162734985	True
+MALAT1	interact with protein	CTNNB1	0.736120879650116	True
+MALAT1	interact with protein	ELAVL1	0.6358218193054199	False
+MALAT1	interact with protein	CDKN1A	0.7647364139556885	True
+MALAT1	interact with protein	MAPK3	0.6025289297103882	True
+MALAT1	interact with protein	YAP1	0.7125656604766846	True
+MALAT1	interact with protein	SUZ12	0.5530423521995544	False
+MALAT1	interact with protein	CDKN1C	0.500170111656189	True
+MALAT1	interact with protein	FOXO1	0.5101473927497864	True
+MALAT1	interact with protein	PTEN	0.6894946098327637	True
+MALAT1	interact with protein	YY1AP1	0.6121817827224731	False
+MALAT1	interact with protein	IGF1R	0.5272199511528015	True
+MALAT1	interact with protein	MAPK14	0.502114474773407	True
+MALAT1	interact with protein	IL6	0.65296870470047	True
+MALAT1	interact with protein	YBX1	0.5635442733764648	True
+MALAT1	interact with protein	ZEB2	0.5168600678443909	True
+MALAT1	interact with protein	TJP1	0.5160243511199951	True
+MALAT1	interact with protein	FOXM1	0.5851272344589233	True
+MALAT1	interact with protein	BIRC7	0.5084768533706665	False
+MALAT1	interact with protein	MMP9	0.5255905985832214	True
+MALAT1	interact with protein	CCND1	0.5006675124168396	True
+MALAT1	interact with protein	PARP1	0.5440370440483093	True
+MALAT1	interact with protein	PI3K	0.5364038944244385	True
+MALAT1	interact with protein	vimentin	0.5547767877578735	True
+MALAT1	interact with protein	WDR5	0.5880690813064575	True
+MALAT1	interact with protein	CDH1	0.7308366894721985	False
+MALAT1	interact with protein	BMI1	0.536993682384491	True
+MALAT1	interact with protein	NFKB1	0.6347066164016724	False
+MALAT1	interact with protein	BAX	0.5008821487426758	True
+MALAT1	interact with protein	ILF3	0.5480225086212158	True
+MALAT1	interact with protein	SNAI1	0.5711727142333984	True
+MALAT1	interact with protein	DNMT1	0.5923863649368286	True
+MALAT1	interact with protein	E2F1	0.7284352779388428	False
+MALAT1	interact with protein	SNAI2	0.5344412326812744	True
+MALAT1	interact with protein	SOX2	0.5677728652954102	False
+MALAT1	interact with protein	PTK2	0.5006982684135437	True
+MALAT1	interact with protein	FAS	0.5016533136367798	True
+MALAT1	interact with protein	MYC	0.6776325106620789	True
+MALAT1	interact with protein	MMP2	0.5960730314254761	True
+MALAT1	interact with protein	POU5F1	0.5343151092529297	True
+MALAT1	interact with protein	miR-34a	0.50713050365448	True
+MALAT1	interact with protein	GSK3B	0.539887011051178	True
+MALAT1	interact with protein	SREBF1	0.5016393065452576	True
+MALAT1	interact with protein	HIF1A	0.7069994211196899	True
+MALAT1	interact with protein	HOTAIR	0.5347509980201721	True
+MALAT1	interact with protein	PCDH10	0.5137844681739807	True
+MALAT1	interact with protein	PTBP3	0.5492048859596252	True
+MALAT1	interact with protein	BCL2	0.5275411009788513	True
+MALAT1	interact with protein	CDKN2B	0.5202828049659729	True
+MALAT1	interact with protein	TP53	0.7903639078140259	True
+MALAT1	interact with protein	Cyclin D1	0.6216009259223938	True
+MALAT1	interact with protein	CDKN1B	0.749511182308197	True
+MALAT1	interact with protein	ZEB1	0.6038249731063843	True
+MALAT1	interact with protein	ANXA2	0.5688715577125549	True
+MALAT1	interact with protein	VEGFA	0.5523303747177124	True
+MALAT1	interact with protein	SP1	0.6942562460899353	False
+MALAT1	interact with protein	PIK3CA	0.5588157773017883	True
+MALAT1	interact with protein	PKM	0.5079073309898376	True
+MALAT1	interact with protein	KLF2	0.5713062286376953	True
+MALAT1	interact with protein	STAT3	0.6985142230987549	True
+MALAT1	interact with protein	SMAD2	0.5056726336479187	True
+MALAT1	interact with protein	MALAT1	0.718986988067627	True
+MALAT1	interact with protein	miR-29b	0.5286061763763428	True
+MALAT1	interact with protein	MEG3	0.5916519165039062	True
+MALAT1	interact with protein	STAT1	0.5336865782737732	True
+MALAT1	interact with protein	MTOR	0.5464964509010315	True
+MALAT1	interact with protein	NOTCH1	0.6999838948249817	True
+MALAT1	interact with protein	ATG7	0.5622815489768982	True
+MALAT1	interact with protein	miR-29a	0.5625472068786621	True
+MALAT1	interact with protein	MAPK1	0.5277855396270752	True
+MALAT1	interact with protein	E-cadherin	0.6286555528640747	True
+MALAT1	interact with protein	SOX9	0.5050988793373108	True
+MALAT1	interact with protein	YY1	0.619065523147583	True
+MALAT1	interact with protein	CCL5	0.5746033787727356	True
+MALAT1	interact with protein	TGFB1	0.5619244575500488	True
+MALAT1	interact with protein	TUG1	0.5103568434715271	True
+MALAT1	interact with protein	DDX5	0.53281170129776	True
+MALAT1	interact with protein	TNF	0.6546527743339539	True
+MALAT1	interact with protein	TWIST1	0.5176033973693848	True
+MALAT1	interact with protein	LATS1	0.6149815320968628	True
+MALAT1	interact with protein	UPF1	0.5532084703445435	True
+MALAT1	interact with protein	EPCAM	0.5537098050117493	True
+MALAT1	interact with protein	NANOG	0.543292224407196	True
+MALAT1	interact with protein	miR-129-5p	0.5166209936141968	True
+MALAT1	chromatin looping	H19	0.563616931438446	True
+MALAT1	chromatin looping	SOX4	0.6208277344703674	True
+MALAT1	chromatin looping	TIMP2	0.5147069692611694	True
+MALAT1	chromatin looping	SMAD3	0.5562161803245544	True
+MALAT1	chromatin looping	EZH2	0.5451205968856812	True
+MALAT1	chromatin looping	E2F3	0.5040509104728699	True
+MALAT1	chromatin looping	LATS2	0.5071512460708618	True
+MALAT1	chromatin looping	MDM2	0.536473274230957	True
+MALAT1	chromatin looping	CTNNB1	0.5930298566818237	True
+MALAT1	chromatin looping	CDKN1A	0.5932570099830627	True
+MALAT1	chromatin looping	YAP1	0.5829284191131592	True
+MALAT1	chromatin looping	FOXO1	0.5311093926429749	True
+MALAT1	chromatin looping	PTEN	0.6286762952804565	True
+MALAT1	chromatin looping	IGF1R	0.5499120354652405	True
+MALAT1	chromatin looping	SIRT1	0.5040622353553772	True
+MALAT1	chromatin looping	IL6	0.586122453212738	True
+MALAT1	chromatin looping	CDK1	0.5593134164810181	True
+MALAT1	chromatin looping	ZEB2	0.5393193960189819	True
+MALAT1	chromatin looping	FOXM1	0.5660542249679565	True
+MALAT1	chromatin looping	MMP9	0.5756814479827881	True
+MALAT1	chromatin looping	CCND1	0.5254972577095032	True
+MALAT1	chromatin looping	CDKN2B-AS1	0.5030427575111389	True
+MALAT1	chromatin looping	MET	0.5081033110618591	True
+MALAT1	chromatin looping	CDK6	0.6074698567390442	True
+MALAT1	chromatin looping	CDH1	0.5403159260749817	True
+MALAT1	chromatin looping	E2F1	0.5680875778198242	True
+MALAT1	chromatin looping	XIST	0.5201510787010193	True
+MALAT1	chromatin looping	SOX2	0.5708609223365784	True
+MALAT1	chromatin looping	PTK2	0.5097259879112244	True
+MALAT1	chromatin looping	MYC	0.6408403515815735	True
+MALAT1	chromatin looping	MMP2	0.5678939819335938	True
+MALAT1	chromatin looping	GAS5	0.5474749803543091	True
+MALAT1	chromatin looping	miR-34a	0.5402302145957947	True
+MALAT1	chromatin looping	GSK3B	0.5190356969833374	True
+MALAT1	chromatin looping	HIF1A	0.6159361600875854	True
+MALAT1	chromatin looping	HOTAIR	0.5803800821304321	True
+MALAT1	chromatin looping	HMGA2	0.5035567879676819	True
+MALAT1	chromatin looping	BCL2	0.5644193291664124	True
+MALAT1	chromatin looping	TP53	0.6269303560256958	True
+MALAT1	chromatin looping	UCA1	0.5377725958824158	True
+MALAT1	chromatin looping	Cyclin D1	0.5852657556533813	True
+MALAT1	chromatin looping	CDKN1B	0.5006349682807922	True
+MALAT1	chromatin looping	ZEB1	0.5704426765441895	True
+MALAT1	chromatin looping	HMGB1	0.5279345512390137	True
+MALAT1	chromatin looping	VEGFA	0.5933831930160522	True
+MALAT1	chromatin looping	SP1	0.5675718784332275	True
+MALAT1	chromatin looping	PIK3CA	0.5409422516822815	True
+MALAT1	chromatin looping	KLF2	0.5179758667945862	True
+MALAT1	chromatin looping	ROCK1	0.558915376663208	True
+MALAT1	chromatin looping	STAT3	0.6379489898681641	True
+MALAT1	chromatin looping	SMAD2	0.546972930431366	True
+MALAT1	chromatin looping	MALAT1	0.6322081089019775	True
+MALAT1	chromatin looping	MEG3	0.5276545882225037	True
+MALAT1	chromatin looping	NEAT1	0.5739056468009949	True
+MALAT1	chromatin looping	NORAD	0.512396514415741	True
+MALAT1	chromatin looping	NOTCH1	0.594605565071106	True
+MALAT1	chromatin looping	PVT1	0.5173444151878357	True
+MALAT1	chromatin looping	E-cadherin	0.5433308482170105	True
+MALAT1	chromatin looping	SNHG1	0.5046676993370056	True
+MALAT1	chromatin looping	SNHG7	0.5107941031455994	True
+MALAT1	chromatin looping	SOX9	0.5145518779754639	True
+MALAT1	chromatin looping	YY1	0.5798384547233582	True
+MALAT1	chromatin looping	TGFB1	0.5496581792831421	True
+MALAT1	chromatin looping	TUG1	0.5084840655326843	True
+MALAT1	chromatin looping	TNF	0.544853687286377	True
+MALAT1	chromatin looping	HMGA1	0.511484682559967	True
+MALAT1	chromatin looping	TWIST1	0.5898497104644775	True
+MALAT1	chromatin looping	LATS1	0.503765344619751	True
+MALAT1	chromatin looping	EPCAM	0.5028964281082153	True
+MALAT1	chromatin looping	miR-129-5p	0.5086029171943665	True
