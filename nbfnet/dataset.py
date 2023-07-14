@@ -579,7 +579,8 @@ class LncTarD2(data.KnowledgeGraphDataset):
         "message_passing.txt",  # such as biogrid
         "supervision.txt",  # such as KEGG train
         "valid.txt",  # such as KEGG valid
-        "test_predict.txt"
+        "test_vis.txt"
+        # "test_predict.txt"
         # "test.txt",
     ]  # such as KEGG test
 
