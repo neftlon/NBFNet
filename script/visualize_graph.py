@@ -264,7 +264,7 @@ if __name__ == "__main__":
             #            relation = re.search(r"(.+) \(\d+\)", relation_vocab[r]).groups()[0]
             save_file = "%s_%s.html" % (entity, relation)
             save_file = re.sub(r"[^\w().]+", "-", save_file)
-            if ranking[j, 0] <= 10 and not os.path.exists(save_file):
+            if ranking[j, 0] <= 100 and not os.path.exists(save_file):
                 paths, weights = task.visualize(sample)
                 if paths:
                     visualize_echarts(task.fact_graph, sample, paths, weights, entity_vocab, relation_vocab,
