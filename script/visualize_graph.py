@@ -156,8 +156,8 @@ torch.manual_seed(1024 + comm.get_rank())
 
 logger = logging.getLogger(__name__)
 
-# vocab_file = os.path.join(os.path.dirname(__file__), "../data/lnctard/entity_names.txt")
-vocab_file = os.path.join(os.path.dirname(__file__), "../data/mock/entity_names.txt")
+vocab_file = os.path.join(os.path.dirname(__file__), "../data/lnctard/entity_names.txt")
+# vocab_file = os.path.join(os.path.dirname(__file__), "../data/mock/entity_names.txt")
 vocab_file = os.path.abspath(vocab_file)
 
 
