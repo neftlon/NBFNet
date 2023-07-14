@@ -1,4 +1,4 @@
-output_dir: results/LncTarD2
+output_dir: /root/LncTarD2
 
 dataset:
   class: LncTarD2

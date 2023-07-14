@@ -1,0 +1,6 @@
+MALAT1	transcriptional regulation	H19
+MALAT1	ceRNA or sponge	H19
+MALAT1	expression association	H19
+MALAT1	interact with mRNA	H19
+MALAT1	interact with protein	H19
+MALAT1	chromatin looping	H19
