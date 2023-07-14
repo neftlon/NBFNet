@@ -1,2 +1,2 @@
 MALAT1	expression association	p-PI3K
-miR-127-5p	expression association	p-PI3K
+MALAT1	transcriptional regulation	PTEN
