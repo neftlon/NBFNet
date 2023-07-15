@@ -33,7 +33,7 @@ optimizer:
 
 engine:
   gpus: {{ gpus }}
-  batch_size: 2
+  batch_size: 3
 
 checkpoint: {{ checkpoint }}
   

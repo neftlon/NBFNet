@@ -1,2 +1,3 @@
-MALAT1	expression association	p-PI3K
-MALAT1	expression association	N-cadherin
+MALAT1	transcriptional regulation	MYC
+MALAT1	transcriptional regulation	PTEN
+MALAT1	transcriptional regulation	KLF2
