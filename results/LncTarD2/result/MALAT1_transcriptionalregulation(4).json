@@ -1,0 +1,233 @@
+{
+    "edges": [
+        {
+            "lineStyle": {
+                "width": 4.303442001342773
+            },
+            "source": 7,
+            "target": 8,
+            "value": "ceRNA or sponge (3)"
+        },
+        {
+            "lineStyle": {
+                "width": 1.786571741104126
+            },
+            "source": 10,
+            "target": 1,
+            "value": "ceRNA or sponge (3)"
+        },
+        {
+            "lineStyle": {
+                "width": 1.908600091934204
+            },
+            "source": 3,
+            "target": 2,
+            "value": "interact with mRNA (6)"
+        },
+        {
+            "lineStyle": {
+                "width": 1.8678596019744873
+            },
+            "source": 10,
+            "target": 1,
+            "value": "expression association (2)"
+        },
+        {
+            "lineStyle": {
+                "width": 16.818998336791992
+            },
+            "source": 10,
+            "target": 2,
+            "value": "epigenetic regulation (0)"
+        },
+        {
+            "lineStyle": {
+                "width": 3.654431104660034
+            },
+            "source": 7,
+            "target": 1,
+            "value": "ceRNA or sponge (3)"
+        },
+        {
+            "lineStyle": {
+                "width": 1.7532742023468018
+            },
+            "source": 10,
+            "target": 5,
+            "value": "ceRNA or sponge (3)"
+        },
+        {
+            "lineStyle": {
+                "width": 1.7538503408432007
+            },
+            "source": 10,
+            "target": 4,
+            "value": "expression association (2)"
+        },
+        {
+            "lineStyle": {
+                "width": 1.908600091934204
+            },
+            "source": 10,
+            "target": 0,
+            "value": "ceRNA or sponge (3)"
+        },
+        {
+            "lineStyle": {
+                "width": 1.8774914741516113
+            },
+            "source": 10,
+            "target": 11,
+            "value": "ceRNA or sponge (3)"
+        },
+        {
+            "lineStyle": {
+                "width": 1.8234254121780396
+            },
+            "source": 7,
+            "target": 9,
+            "value": "ceRNA or sponge (3)"
+        },
+        {
+            "lineStyle": {
+                "width": 3.5616841316223145
+            },
+            "source": 6,
+            "target": 7,
+            "value": "transcriptional regulation (4)"
+        },
+        {
+            "lineStyle": {
+                "width": 1.7532742023468018
+            },
+            "source": 7,
+            "target": 5,
+            "value": "ceRNA or sponge (3)"
+        },
+        {
+            "lineStyle": {
+                "width": 1.8234254121780396
+            },
+            "source": 10,
+            "target": 9,
+            "value": "expression association (2)"
+        },
+        {
+            "lineStyle": {
+                "width": 1.8774914741516113
+            },
+            "source": 7,
+            "target": 11,
+            "value": "ceRNA or sponge (3)"
+        },
+        {
+            "lineStyle": {
+                "width": 1.7802257537841797
+            },
+            "source": 10,
+            "target": 6,
+            "value": "ceRNA or sponge (3)"
+        },
+        {
+            "lineStyle": {
+                "width": 1.908600091934204
+            },
+            "source": 3,
+            "target": 0,
+            "value": "expression association (2)"
+        },
+        {
+            "lineStyle": {
+                "width": 1.7538503408432007
+            },
+            "source": 7,
+            "target": 4,
+            "value": "expression association (2)"
+        },
+        {
+            "lineStyle": {
+                "width": 4.303442001342773
+            },
+            "source": 10,
+            "target": 8,
+            "value": "ceRNA or sponge (3)"
+        },
+        {
+            "lineStyle": {
+                "width": 1.7814586162567139
+            },
+            "source": 10,
+            "target": 6,
+            "value": "expression association (2)"
+        }
+    ],
+    "nodes": [
+        {
+            "id": 0,
+            "name": "YAP1",
+            "symbolSize": 9.498540878295898
+        },
+        {
+            "id": 1,
+            "name": "CCND1",
+            "symbolSize": 9.7977294921875
+        },
+        {
+            "id": 2,
+            "itemStyle": {
+                "color": "#3ba272"
+            },
+            "name": "MYC",
+            "symbolSize": 10.731412887573242
+        },
+        {
+            "id": 3,
+            "name": "GHET1",
+            "symbolSize": 9.498540878295898
+        },
+        {
+            "id": 4,
+            "name": "BCL2",
+            "symbolSize": 9.471691131591797
+        },
+        {
+            "id": 5,
+            "name": "HMGB1",
+            "symbolSize": 9.471590042114258
+        },
+        {
+            "id": 6,
+            "name": "SP1",
+            "symbolSize": 9.782004356384277
+        },
+        {
+            "id": 7,
+            "itemStyle": {
+                "color": "#ee6666"
+            },
+            "name": "MALAT1",
+            "symbolSize": 10.731412887573242
+        },
+        {
+            "id": 8,
+            "name": "FOXQ1",
+            "symbolSize": 9.907247543334961
+        },
+        {
+            "id": 9,
+            "name": "MTOR",
+            "symbolSize": 9.48376750946045
+        },
+        {
+            "id": 10,
+            "name": "PVT1",
+            "symbolSize": 12.132919311523438
+        },
+        {
+            "id": 11,
+            "name": "SOX9",
+            "symbolSize": 9.493146896362305
+        }
+    ],
+    "title": "p(MYC | MALAT1, transcriptional regulation (4))\nranking = 45"
+}
