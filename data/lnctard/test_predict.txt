@@ -4,3 +4,4 @@ MALAT1	expression association	H19
 MALAT1	interact with mRNA	H19
 MALAT1	interact with protein	H19
 MALAT1	chromatin looping	H19
+MALAT1	epigenetic regulation	H19
